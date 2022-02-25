@@ -21,7 +21,7 @@ namespace QuanLyChungCu.View
 
         private bool checkNullItem()
         {
-            if (txtNameCustomer.Text == "" || txtEmailCustomer.Text == "" || cbbGioiTinh.Text == "" || txtBirthdayCustomer.Text == "" || txtIdentityCustomer.Text == "" || txtRoomId.Text == "")
+            if (txtCustomerId.Text == " " || txtNameCustomer.Text == "" || txtEmailCustomer.Text == "" || cbbGioiTinh.Text == "" || txtBirthdayCustomer.Text == "" || txtIdentityCustomer.Text == "" || txtRoomId.Text == "")
             {
                 return false;
             }
@@ -31,6 +31,7 @@ namespace QuanLyChungCu.View
         //Hàm xử lý lưu dữ liệu.
         private void GanDuLieu(Object.ObjCustomerDetail customerDetail)
         {
+            customerDetail.CustomerId = txtCustomerId.Text.Trim();
             customerDetail.CustomerName = txtNameCustomer.Text.Trim();
             customerDetail.CustomerEmail = txtEmailCustomer.Text.Trim();
             customerDetail.CustomerGender = cbbGioiTinh.Text.Trim();
@@ -47,7 +48,7 @@ namespace QuanLyChungCu.View
 
         private void LamMoi()
         {
-            //txtId_Customer.Clear();
+            txtCustomerId.Clear();
             txtNameCustomer.Clear();
             txtEmailCustomer.Clear();
             cbbGioiTinh.Text = "";
@@ -69,6 +70,7 @@ namespace QuanLyChungCu.View
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
+            txtCustomerId.Clear();
             txtNameCustomer.Clear();
             txtEmailCustomer.Clear();
             cbbGioiTinh.Text = "";
@@ -158,5 +160,13 @@ namespace QuanLyChungCu.View
             }
         }
 
+        private void txtCustomerId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

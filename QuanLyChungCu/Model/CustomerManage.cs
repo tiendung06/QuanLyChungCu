@@ -54,9 +54,10 @@ namespace QuanLyChungCu.Model
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "INSERT INTO " +
-                "Customer(CustomerName, CustomerEmail, CustomerGender, CustomerBirthday, CustomerIdentityCard, RoomId) " +
-                "VALUES (@name, @email, @gender, @birthday, @identity, @roomid)";
+                "Customer(CustomerId, CustomerName, CustomerEmail, CustomerGender, CustomerBirthday, CustomerIdentityCard, RoomId) " +
+                "VALUES (@id, @name, @email, @gender, @birthday, @identity, @roomid)";
 
+            cmd.Parameters.Add("id", SqlDbType.NVarChar).Value = cdt.CustomerId;
             cmd.Parameters.Add("name", SqlDbType.NVarChar).Value = cdt.CustomerName;
             cmd.Parameters.Add("email", SqlDbType.NVarChar).Value = cdt.CustomerEmail;
             cmd.Parameters.Add("gender", SqlDbType.NVarChar).Value = cdt.CustomerGender;

@@ -46,6 +46,8 @@
             this.button1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.txtBirthdayCustomer = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtCustomerId = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.cbbGioiTinh)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -93,7 +95,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 9.75F);
-            this.label2.Location = new System.Drawing.Point(50, 172);
+            this.label2.Location = new System.Drawing.Point(50, 233);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 15);
             this.label2.TabIndex = 53;
@@ -103,7 +105,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 9.75F);
-            this.label1.Location = new System.Drawing.Point(50, 111);
+            this.label1.Location = new System.Drawing.Point(50, 172);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 15);
             this.label1.TabIndex = 51;
@@ -113,7 +115,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Roboto", 9.75F);
-            this.label15.Location = new System.Drawing.Point(50, 50);
+            this.label15.Location = new System.Drawing.Point(50, 111);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(76, 15);
             this.label15.TabIndex = 46;
@@ -360,7 +362,7 @@
             // txtNameCustomer
             // 
             this.txtNameCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtNameCustomer.Location = new System.Drawing.Point(151, 42);
+            this.txtNameCustomer.Location = new System.Drawing.Point(158, 103);
             this.txtNameCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.txtNameCustomer.Name = "txtNameCustomer";
             this.txtNameCustomer.Size = new System.Drawing.Size(166, 31);
@@ -383,7 +385,7 @@
             // txtEmailCustomer
             // 
             this.txtEmailCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtEmailCustomer.Location = new System.Drawing.Point(151, 103);
+            this.txtEmailCustomer.Location = new System.Drawing.Point(158, 164);
             this.txtEmailCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmailCustomer.Name = "txtEmailCustomer";
             this.txtEmailCustomer.Size = new System.Drawing.Size(166, 31);
@@ -411,7 +413,7 @@
             this.cbbGioiTinh.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.cbbGioiTinh.Location = new System.Drawing.Point(151, 167);
+            this.cbbGioiTinh.Location = new System.Drawing.Point(158, 228);
             this.cbbGioiTinh.Name = "cbbGioiTinh";
             this.cbbGioiTinh.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.cbbGioiTinh.Size = new System.Drawing.Size(166, 25);
@@ -519,23 +521,58 @@
             this.panel1.Controls.Add(this.btnThoat);
             this.panel1.Controls.Add(this.btnLamMoi);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 244);
+            this.panel1.Location = new System.Drawing.Point(0, 304);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(850, 90);
             this.panel1.TabIndex = 77;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto", 9.75F);
+            this.label3.Location = new System.Drawing.Point(50, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 15);
+            this.label3.TabIndex = 46;
+            this.label3.Text = "Mã người ở:";
+            // 
+            // txtCustomerId
+            // 
+            this.txtCustomerId.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtCustomerId.Location = new System.Drawing.Point(158, 42);
+            this.txtCustomerId.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCustomerId.Name = "txtCustomerId";
+            this.txtCustomerId.Size = new System.Drawing.Size(166, 31);
+            this.txtCustomerId.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.txtCustomerId.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtCustomerId.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtCustomerId.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtCustomerId.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.txtCustomerId.StateCommon.Border.Rounding = 6;
+            this.txtCustomerId.StateCommon.Border.Width = 1;
+            this.txtCustomerId.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(51)))));
+            this.txtCustomerId.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerId.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.txtCustomerId.StateDisabled.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.txtCustomerId.TabIndex = 1;
+            this.txtCustomerId.WordWrap = false;
+            this.txtCustomerId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCustomerId_KeyPress);
             // 
             // AddNewCustomerDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(850, 334);
+            this.ClientSize = new System.Drawing.Size(850, 394);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.mntNgaySinh);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtBirthdayCustomer);
             this.Controls.Add(this.cbbGioiTinh);
             this.Controls.Add(this.txtEmailCustomer);
+            this.Controls.Add(this.txtCustomerId);
             this.Controls.Add(this.txtNameCustomer);
             this.Controls.Add(this.txtRoomId);
             this.Controls.Add(this.txtIdentityCustomer);
@@ -544,6 +581,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label15);
             this.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -578,5 +616,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton button1;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtBirthdayCustomer;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtCustomerId;
     }
 }
