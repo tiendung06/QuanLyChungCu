@@ -40,10 +40,10 @@ namespace QuanLyChungCu.Model
             cmd.CommandText = "UPDATE Customer SET CustomerName = @name, CustomerEmail = @email, CustomerGender = @gender, CustomerBirthday = @birthday, CustomerIdentityCard = @identity, RoomId = @roomid WHERE CustomerId = @customerid;";
 
             cmd.Parameters.Add("name", SqlDbType.NVarChar).Value = customerDetail.CustomerName;
-            cmd.Parameters.Add("email", SqlDbType.NVarChar).Value = customerDetail.CustomerEmail;
+            cmd.Parameters.Add("email", SqlDbType.VarChar).Value = customerDetail.CustomerEmail;
             cmd.Parameters.Add("gender", SqlDbType.NVarChar).Value = customerDetail.CustomerGender;
-            cmd.Parameters.Add("birthday", SqlDbType.DateTime).Value = customerDetail.CustomerBirthday;
-            cmd.Parameters.Add("identity", SqlDbType.VarChar).Value = customerDetail.CustomerIdentityCard;
+            cmd.Parameters.Add("birthday", SqlDbType.Date).Value = customerDetail.CustomerBirthday;
+            cmd.Parameters.Add("identity", SqlDbType.NVarChar).Value = customerDetail.CustomerIdentityCard;
             cmd.Parameters.Add("roomid", SqlDbType.Int).Value = customerDetail.RoomId;
             cmd.Parameters.Add("customerid", SqlDbType.Int).Value = customerDetail.CustomerId;
 
@@ -57,12 +57,12 @@ namespace QuanLyChungCu.Model
                 "Customer(CustomerId, CustomerName, CustomerEmail, CustomerGender, CustomerBirthday, CustomerIdentityCard, RoomId) " +
                 "VALUES (@id, @name, @email, @gender, @birthday, @identity, @roomid)";
 
-            cmd.Parameters.Add("id", SqlDbType.NVarChar).Value = cdt.CustomerId;
+            cmd.Parameters.Add("id", SqlDbType.Int).Value = cdt.CustomerId;
             cmd.Parameters.Add("name", SqlDbType.NVarChar).Value = cdt.CustomerName;
-            cmd.Parameters.Add("email", SqlDbType.NVarChar).Value = cdt.CustomerEmail;
+            cmd.Parameters.Add("email", SqlDbType.VarChar).Value = cdt.CustomerEmail;
             cmd.Parameters.Add("gender", SqlDbType.NVarChar).Value = cdt.CustomerGender;
-            cmd.Parameters.Add("birthday", SqlDbType.DateTime).Value = cdt.CustomerBirthday;
-            cmd.Parameters.Add("identity", SqlDbType.VarChar).Value = cdt.CustomerIdentityCard;
+            cmd.Parameters.Add("birthday", SqlDbType.Date).Value = cdt.CustomerBirthday;
+            cmd.Parameters.Add("identity", SqlDbType.NVarChar).Value = cdt.CustomerIdentityCard;
             cmd.Parameters.Add("roomid", SqlDbType.Int).Value = cdt.RoomId;
 
             return cls.CapNhatDL(cmd);

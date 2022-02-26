@@ -39,10 +39,10 @@ namespace QuanLyChungCu.Model
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "UPDATE Room SET Cost = @cost, RoomFloor = @floor, RoomStatus = @status WHERE RoomId = @id";
 
-            cmd.Parameters.Add("cost", SqlDbType.NVarChar).Value = room.Cost;
-            cmd.Parameters.Add("floor", SqlDbType.NVarChar).Value = room.RoomFloor;
+            cmd.Parameters.Add("cost", SqlDbType.Float).Value = room.Cost;
+            cmd.Parameters.Add("floor", SqlDbType.Int).Value = room.RoomFloor;
             cmd.Parameters.Add("status", SqlDbType.NVarChar).Value = room.RoomStatus;
-            cmd.Parameters.Add("id", SqlDbType.NVarChar).Value = room.RoomId;
+            cmd.Parameters.Add("id", SqlDbType.Int).Value = room.RoomId;
 
             return cls.CapNhatDL(cmd);
         }
@@ -54,9 +54,9 @@ namespace QuanLyChungCu.Model
                 "Room(RoomId, Cost, RoomFloor, RoomStatus) " +
                 "VALUES (@id, @cost, @floor, @status)";
 
-            cmd.Parameters.Add("id", SqlDbType.NVarChar).Value = cdt.RoomId;
-            cmd.Parameters.Add("cost", SqlDbType.NVarChar).Value = cdt.Cost;
-            cmd.Parameters.Add("floor", SqlDbType.NVarChar).Value = cdt.RoomFloor;
+            cmd.Parameters.Add("id", SqlDbType.Int).Value = cdt.RoomId;
+            cmd.Parameters.Add("cost", SqlDbType.Float).Value = cdt.Cost;
+            cmd.Parameters.Add("floor", SqlDbType.Int).Value = cdt.RoomFloor;
             cmd.Parameters.Add("status", SqlDbType.NVarChar).Value = cdt.RoomStatus;
 
             return cls.CapNhatDL(cmd);
