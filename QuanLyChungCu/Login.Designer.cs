@@ -159,6 +159,7 @@
             this.username.TabIndex = 24;
             this.username.Text = "Tài khoản";
             this.username.WordWrap = false;
+            this.username.Enter += new System.EventHandler(this.username_Enter);
             this.username.MouseClick += new System.Windows.Forms.MouseEventHandler(this.username_MouseClick);
             // 
             // password
@@ -183,6 +184,7 @@
             this.password.TabIndex = 25;
             this.password.Text = "Mật khẩu";
             this.password.WordWrap = false;
+            this.password.Enter += new System.EventHandler(this.password_Enter);
             this.password.MouseClick += new System.Windows.Forms.MouseEventHandler(this.password_MouseClick);
             // 
             // buttonLogin
@@ -297,6 +299,7 @@
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

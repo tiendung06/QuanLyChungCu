@@ -129,5 +129,21 @@ namespace QuanLyChungCu
                 }
             }
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = label1;
+        }
+
+        private void username_Enter(object sender, EventArgs e)
+        {
+            username.Clear();
+        }
+
+        private void password_Enter(object sender, EventArgs e)
+        {
+            password.Clear();
+            password.PasswordChar = '*';
+        }
     }
 }
