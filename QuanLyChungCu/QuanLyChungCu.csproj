@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\AccountCtrl.cs" />
+    <Compile Include="Controller\ContractCtrl.cs" />
     <Compile Include="Controller\CustomerDetailCtrl.cs" />
     <Compile Include="Controller\CustomerGroupCtrl.cs" />
     <Compile Include="Controller\DeviceCtrl.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="MainControl.Designer.cs">
       <DependentUpon>MainControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\ContractManage.cs" />
     <Compile Include="Model\CustomerGroupManage.cs" />
     <Compile Include="Model\CustomerManage.cs" />
     <Compile Include="Model\DeviceManage.cs" />
@@ -111,6 +113,7 @@
     <Compile Include="Model\StatisticalMng.cs" />
     <Compile Include="Model\TypeDeviceMng.cs" />
     <Compile Include="Object\ObjAccount.cs" />
+    <Compile Include="Object\ObjContract.cs" />
     <Compile Include="Object\ObjCustomerDetail.cs" />
     <Compile Include="Object\ObjCustomerGroup.cs" />
     <Compile Include="Object\ObjDevice.cs" />
@@ -125,6 +128,12 @@
     </Compile>
     <Compile Include="View\AddNewAcc.Designer.cs">
       <DependentUpon>AddNewAcc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddNewContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddNewContract.Designer.cs">
+      <DependentUpon>AddNewContract.cs</DependentUpon>
     </Compile>
     <Compile Include="View\AddNewCustomerDetail.cs">
       <SubType>Form</SubType>
@@ -179,6 +188,12 @@
     </Compile>
     <Compile Include="View\MuonThietBi.Designer.cs">
       <DependentUpon>MuonThietBi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QuanLyHopDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QuanLyHopDong.Designer.cs">
+      <DependentUpon>QuanLyHopDong.cs</DependentUpon>
     </Compile>
     <Compile Include="View\QuanLyKhachO.cs">
       <SubType>Form</SubType>
@@ -265,6 +280,9 @@
     <EmbeddedResource Include="View\AddNewAcc.resx">
       <DependentUpon>AddNewAcc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\AddNewContract.resx">
+      <DependentUpon>AddNewContract.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\AddNewCustomerDetail.resx">
       <DependentUpon>AddNewCustomerDetail.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\QLThongKe.resx">
       <DependentUpon>QLThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QuanLyHopDong.resx">
+      <DependentUpon>QuanLyHopDong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\QuanLyKhachO.resx">
       <DependentUpon>QuanLyKhachO.cs</DependentUpon>

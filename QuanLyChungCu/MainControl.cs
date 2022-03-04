@@ -67,6 +67,8 @@ namespace QuanLyChungCu
                 btnQLPhong.BackColor = Color.FromArgb(250, 255, 252);
             if (Application.OpenForms["QuanLyKhachO"] == null)
                 btnQLKhachO.BackColor = Color.FromArgb(250, 255, 252);
+            if (Application.OpenForms["QuanLyHopDong"] == null)
+                btnQLHopDong.BackColor = Color.FromArgb(250, 255, 252);
             if (Application.OpenForms["QuanLyTaiKhoan"] == null)
                 btnQLTaiKhoan.BackColor = Color.FromArgb(250, 255, 252);
             if (Application.OpenForms["QuanLyNguoiDung"] == null)
@@ -99,6 +101,10 @@ namespace QuanLyChungCu
             btnQLKhachO.BackColor = Color.FromArgb(250, 255, 252);
             btnQLKhachO.ForeColor = Color.FromArgb(103, 102, 105);
             btnQLKhachO.IconColor = Color.FromArgb(103, 102, 105);
+
+            btnQLHopDong.BackColor = Color.FromArgb(250, 255, 252);
+            btnQLHopDong.ForeColor = Color.FromArgb(103, 102, 105);
+            btnQLHopDong.IconColor = Color.FromArgb(103, 102, 105);
 
             btnQLTaiKhoan.BackColor = Color.FromArgb(250, 255, 252);
             btnQLTaiKhoan.ForeColor = Color.FromArgb(103, 102, 105);
@@ -279,5 +285,14 @@ namespace QuanLyChungCu
             return value.Replace("\'", "NULL").Replace("=", "NULL");
         }
 
+        private void btnQLHopDong_Click(object sender, EventArgs e)
+        {
+            //form hop dong
+            resetColorForButton();
+            AbrirFormulario<QuanLyHopDong>();
+            btnQLHopDong.BackColor = Color.FromArgb(8, 142, 254);
+            btnQLHopDong.ForeColor = Color.FromArgb(250, 255, 252);
+            btnQLHopDong.IconColor = Color.FromArgb(250, 255, 252);
+        }
     }
 }
