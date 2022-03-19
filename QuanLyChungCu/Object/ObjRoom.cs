@@ -24,6 +24,14 @@ namespace QuanLyChungCu.Object
             set { _Cost = value; }
         }
 
+        private string _RoomArea;
+
+        public string RoomArea
+        {
+            get { return _RoomArea; }
+            set { _RoomArea = value; }
+        }
+
         private string _RoomFloor;
 
         public string RoomFloor

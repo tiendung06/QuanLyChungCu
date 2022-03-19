@@ -14,11 +14,6 @@ namespace QuanLyChungCu.Controller
         Model.RoomManage roomMng = new Model.RoomManage();
         HelperData.DataConfig helperData = new HelperData.DataConfig();
 
-        public int Xoa(string id)
-        {
-            return roomMng.Xoa(id);
-        }
-
         public void HienThi(DataGridView dgv, string id_room)
         {
             dgv.DataSource = roomMng.GetDataRoom(id_room).Tables[0];
@@ -30,11 +25,11 @@ namespace QuanLyChungCu.Controller
         }
 
         public int Them(Object.ObjRoom room)
-        {          
+        {
             if (!KTMaPhong(Convert.ToInt32(room.RoomId)))
-                return 0;       
+                return 0;
             return roomMng.Save(room);
-        }   
+        }
 
         public bool KTMaPhong(int id)
         {
@@ -54,7 +49,7 @@ namespace QuanLyChungCu.Controller
                 return false;
             }
 
-        }    
+        }
 
         public void HienThiNguoiDung(DataGridView dgv, string tukhoa, string tieuchi)
         {

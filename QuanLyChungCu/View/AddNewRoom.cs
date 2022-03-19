@@ -21,7 +21,7 @@ namespace QuanLyChungCu.View
 
         private bool checkNullItem()
         {
-            if (txtRoomId.Text == "" || txtCost.Text == "" ||  txtRoomFloor.Text == "")
+            if (txtRoomId.Text == "" || txtCost.Text == "" || txtRoomFloor.Text == "" || txtRoomArea.Text == "")
             {
                 return false;
             }
@@ -32,8 +32,9 @@ namespace QuanLyChungCu.View
         private void GanDuLieu(Object.ObjRoom room)
         {
             room.RoomId = txtRoomId.Text.Trim();
-            room.Cost = txtCost.Text.Trim();          
+            room.Cost = txtCost.Text.Trim();
             room.RoomFloor = txtRoomFloor.Text.Trim();
+            room.RoomArea = txtRoomArea.Text.Trim();
             room.RoomStatus = "Còn trống";
         }
 
@@ -44,10 +45,11 @@ namespace QuanLyChungCu.View
         }
 
         private void LamMoi()
-        {           
+        {
             txtRoomId.Clear();
-            txtCost.Clear();          
-            txtRoomFloor.Clear();          
+            txtCost.Clear();
+            txtRoomFloor.Clear();
+            txtRoomArea.Clear();
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
@@ -55,6 +57,7 @@ namespace QuanLyChungCu.View
             txtRoomId.Clear();
             txtCost.Clear();
             txtRoomFloor.Clear();
+            txtRoomArea.Clear();
         }
 
         private void btnThemTK_Click(object sender, EventArgs e)
@@ -94,7 +97,6 @@ namespace QuanLyChungCu.View
 
         private void txtRoomId_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
@@ -103,7 +105,6 @@ namespace QuanLyChungCu.View
 
         private void txtCost_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
@@ -112,7 +113,14 @@ namespace QuanLyChungCu.View
 
         private void txtRoomFloor_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtRoomArea_KeyPress(object sender, KeyPressEventArgs e)
+        {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;

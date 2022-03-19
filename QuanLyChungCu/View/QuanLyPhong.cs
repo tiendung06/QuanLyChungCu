@@ -13,7 +13,7 @@ namespace QuanLyChungCu.View
     public partial class QuanLyPhong : Form
     {
         public static string text = "";
-        string[] optionFind = { "Mã phòng"};
+        string[] optionFind = { "Mã phòng" };
         Model.RoomManage RoomManage = new Model.RoomManage();
         Controller.RoomCtrl roomCtrl = new Controller.RoomCtrl();
 
@@ -26,15 +26,15 @@ namespace QuanLyChungCu.View
         {
             if (Login.resultLogin != 1)
             {
-                btnXoa.Enabled = false;
+                
                 btnThemTK.Enabled = false;
-                btnTimKiem.Enabled = false;
             }
             RoomManage.HienThi(dgvDSChiTietPhong);
             HienThiThongTin();
             optionCombobox.DataSource = optionFind;
             txtRoomId.Enabled = false;
             txtRoomStatus.Enabled = false;
+            txtRoomFloor.Enabled = false;
         }
 
         private void HienThiThongTin()
@@ -43,6 +43,7 @@ namespace QuanLyChungCu.View
             {
                 txtRoomId.Text = dgvDSChiTietPhong.CurrentRow.Cells["RoomId"].Value.ToString();
                 txtCost.Text = dgvDSChiTietPhong.CurrentRow.Cells["Cost"].Value.ToString();
+                txtRoomArea.Text = dgvDSChiTietPhong.CurrentRow.Cells["RoomArea"].Value.ToString();
                 txtRoomFloor.Text = dgvDSChiTietPhong.CurrentRow.Cells["RoomFloor"].Value.ToString();
                 txtRoomStatus.Text = dgvDSChiTietPhong.CurrentRow.Cells["RoomStatus"].Value.ToString();
             }
@@ -59,6 +60,7 @@ namespace QuanLyChungCu.View
             txtRoomId.Clear();
             txtCost.Clear();
             txtRoomFloor.Clear();
+            txtRoomArea.Clear();
             txtRoomStatus.Clear();
             txtTimKiem.Clear();
         }
@@ -88,35 +90,6 @@ namespace QuanLyChungCu.View
             }
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            if (!checkNullTextBox())
-            {
-                MessageBox.Show("Xin mời nhập đầy đủ thông tin!", "Cảnh báo");
-            }
-            else
-            {
-                string id_customer = dgvDSChiTietPhong.CurrentRow.Cells[0].Value.ToString();
-
-                DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (dlg == DialogResult.Yes)
-                {
-                    //delete in table customer detail
-                    if (roomCtrl.Xoa(id_customer) != -9999)
-                    {
-                        MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        roomCtrl.HienThi(dgvDSChiTietPhong, id_customer);
-                        HienThiThongTin();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không thể xóa phòng này khi có người đang thuê phòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-        }
-
         private bool checkNullTextBox()
         {
             if (txtRoomId.Text.Trim() == "")
@@ -129,22 +102,28 @@ namespace QuanLyChungCu.View
                 errCost.SetError(txtCost, "Nhập vào giá phòng");
                 return false;
             }
+            if (txtRoomArea.Text.Trim() == "")
+            {
+                errRoomArea.SetError(txtCost, "Nhập vào diện tích phòng");
+                return false;
+            }
             if (txtRoomFloor.Text.Trim() == "")
             {
                 errRoomFloor.SetError(txtRoomFloor, "Nhập vào số tầng");
                 return false;
-            }          
+            }
             if (txtRoomStatus.Text.Trim() == "")
             {
                 errorRoomStatus.SetError(txtRoomStatus, "Nhập vào trạng thái phòng");
                 return false;
-            }           
+            }
             else
             {
                 errRoomId.SetError(txtRoomId, "");
                 errCost.SetError(txtCost, "");
-                errRoomFloor.SetError(txtRoomFloor, "");                
-                errorRoomStatus.SetError(txtRoomStatus, "");               
+                errRoomArea.SetError(txtRoomArea, "");
+                errRoomFloor.SetError(txtRoomFloor, "");
+                errorRoomStatus.SetError(txtRoomStatus, "");
                 return true;
             }
         }
@@ -154,6 +133,7 @@ namespace QuanLyChungCu.View
             room.RoomId = txtRoomId.Text;
             room.Cost = txtCost.Text;
             room.RoomFloor = txtRoomFloor.Text;
+            room.RoomArea = txtRoomArea.Text;
             room.RoomStatus = txtRoomStatus.Text;
         }
 
@@ -190,6 +170,6 @@ namespace QuanLyChungCu.View
         {
             MessageBox.Show(text, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-      
+
     }
 }

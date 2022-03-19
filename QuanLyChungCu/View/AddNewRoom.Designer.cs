@@ -38,6 +38,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtRoomArea = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -293,7 +295,7 @@
             // txtRoomFloor
             // 
             this.txtRoomFloor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtRoomFloor.Location = new System.Drawing.Point(151, 164);
+            this.txtRoomFloor.Location = new System.Drawing.Point(522, 103);
             this.txtRoomFloor.Margin = new System.Windows.Forms.Padding(2);
             this.txtRoomFloor.Name = "txtRoomFloor";
             this.txtRoomFloor.Size = new System.Drawing.Size(166, 31);
@@ -318,7 +320,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Roboto", 9.75F);
-            this.label5.Location = new System.Drawing.Point(50, 172);
+            this.label5.Location = new System.Drawing.Point(421, 111);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 15);
             this.label5.TabIndex = 89;
@@ -344,6 +346,40 @@
             this.label15.TabIndex = 85;
             this.label15.Text = "Mã phòng:";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Roboto", 9.75F);
+            this.label2.Location = new System.Drawing.Point(421, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 15);
+            this.label2.TabIndex = 89;
+            this.label2.Text = "Diện tích:";
+            // 
+            // txtRoomArea
+            // 
+            this.txtRoomArea.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtRoomArea.Location = new System.Drawing.Point(522, 42);
+            this.txtRoomArea.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRoomArea.Name = "txtRoomArea";
+            this.txtRoomArea.Size = new System.Drawing.Size(166, 31);
+            this.txtRoomArea.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.txtRoomArea.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtRoomArea.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtRoomArea.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.txtRoomArea.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.txtRoomArea.StateCommon.Border.Rounding = 6;
+            this.txtRoomArea.StateCommon.Border.Width = 1;
+            this.txtRoomArea.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(51)))));
+            this.txtRoomArea.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRoomArea.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.txtRoomArea.StateDisabled.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.txtRoomArea.TabIndex = 83;
+            this.txtRoomArea.WordWrap = false;
+            this.txtRoomArea.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRoomArea_KeyPress);
+            // 
             // AddNewRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -353,6 +389,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtCost);
             this.Controls.Add(this.txtRoomId);
+            this.Controls.Add(this.txtRoomArea);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtRoomFloor);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
@@ -379,5 +417,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label2;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtRoomArea;
     }
 }
