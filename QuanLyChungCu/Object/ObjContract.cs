@@ -23,12 +23,12 @@ namespace QuanLyChungCu.Object
             get { return _RoomId; }
             set { _RoomId = value; }
         }
-        private string _CustomerId;
+        private string _TenantIdCard;
 
-        public string CustomerId
+        public string TenantIdCard
         {
-            get { return _CustomerId; }
-            set { _CustomerId = value; }
+            get { return _TenantIdCard; }
+            set { _TenantIdCard = value; }
         }
         
         private string _DateStart;
@@ -38,6 +38,7 @@ namespace QuanLyChungCu.Object
             get { return _DateStart; }
             set { _DateStart = value; }
         }
+
         private string _DateEnd;
 
         public string DateEnd
@@ -46,5 +47,20 @@ namespace QuanLyChungCu.Object
             set { _DateEnd = value; }
         }
 
+        private string _ContractStatus;
+
+        public string ContractStatus
+        {
+            get { return _ContractStatus; }
+            set { _ContractStatus = value; }
+        }
+
+        private string _ContractTitle;
+
+        public string ContractStatusTitle
+        {
+            get { return _ContractTitle; }
+            set { _ContractTitle = value; }
+        }
     }
 }

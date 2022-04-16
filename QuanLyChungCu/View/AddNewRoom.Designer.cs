@@ -28,104 +28,176 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnThemTK = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.lbl_QLTaiKhoan = new System.Windows.Forms.Label();
+            this.grpThongTinTaiKhoan = new Guna.UI.WinForms.GunaGroupBox();
+            this.txtRoomFloor = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnThem = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnThoat = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.btnLamMoi = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.txtCost = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.txtRoomId = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.txtRoomFloor = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtCost = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.txtRoomArea = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.panel1.SuspendLayout();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.panel6.SuspendLayout();
+            this.grpThongTinTaiKhoan.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panel6
             // 
-            this.panel1.Controls.Add(this.btnThemTK);
-            this.panel1.Controls.Add(this.btnThoat);
-            this.panel1.Controls.Add(this.btnLamMoi);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 244);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(850, 90);
-            this.panel1.TabIndex = 92;
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.panel6.Controls.Add(this.lbl_QLTaiKhoan);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1064, 70);
+            this.panel6.TabIndex = 93;
             // 
-            // btnThemTK
+            // lbl_QLTaiKhoan
             // 
-            this.btnThemTK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThemTK.Location = new System.Drawing.Point(363, 27);
-            this.btnThemTK.Margin = new System.Windows.Forms.Padding(2);
-            this.btnThemTK.Name = "btnThemTK";
-            this.btnThemTK.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.btnThemTK.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.btnThemTK.OverrideDefault.Back.ColorAngle = 45F;
-            this.btnThemTK.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.btnThemTK.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.btnThemTK.OverrideDefault.Border.ColorAngle = 45F;
-            this.btnThemTK.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.lbl_QLTaiKhoan.AutoSize = true;
+            this.lbl_QLTaiKhoan.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_QLTaiKhoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(51)))));
+            this.lbl_QLTaiKhoan.Location = new System.Drawing.Point(20, 13);
+            this.lbl_QLTaiKhoan.Name = "lbl_QLTaiKhoan";
+            this.lbl_QLTaiKhoan.Size = new System.Drawing.Size(131, 25);
+            this.lbl_QLTaiKhoan.TabIndex = 3;
+            this.lbl_QLTaiKhoan.Text = "Thêm phòng";
+            // 
+            // grpThongTinTaiKhoan
+            // 
+            this.grpThongTinTaiKhoan.BackColor = System.Drawing.Color.Transparent;
+            this.grpThongTinTaiKhoan.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.grpThongTinTaiKhoan.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.grpThongTinTaiKhoan.Controls.Add(this.txtRoomFloor);
+            this.grpThongTinTaiKhoan.Controls.Add(this.label3);
+            this.grpThongTinTaiKhoan.Controls.Add(this.btnThem);
+            this.grpThongTinTaiKhoan.Controls.Add(this.btnThoat);
+            this.grpThongTinTaiKhoan.Controls.Add(this.btnLamMoi);
+            this.grpThongTinTaiKhoan.Controls.Add(this.txtRoomId);
+            this.grpThongTinTaiKhoan.Controls.Add(this.txtCost);
+            this.grpThongTinTaiKhoan.Controls.Add(this.txtRoomArea);
+            this.grpThongTinTaiKhoan.Controls.Add(this.label13);
+            this.grpThongTinTaiKhoan.Controls.Add(this.label21);
+            this.grpThongTinTaiKhoan.Controls.Add(this.label22);
+            this.grpThongTinTaiKhoan.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpThongTinTaiKhoan.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.grpThongTinTaiKhoan.Location = new System.Drawing.Point(27, 96);
+            this.grpThongTinTaiKhoan.Name = "grpThongTinTaiKhoan";
+            this.grpThongTinTaiKhoan.Radius = 6;
+            this.grpThongTinTaiKhoan.Size = new System.Drawing.Size(1010, 202);
+            this.grpThongTinTaiKhoan.TabIndex = 103;
+            this.grpThongTinTaiKhoan.TextLocation = new System.Drawing.Point(10, 8);
+            // 
+            // txtRoomFloor
+            // 
+            this.txtRoomFloor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtRoomFloor.Location = new System.Drawing.Point(408, 62);
+            this.txtRoomFloor.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRoomFloor.Name = "txtRoomFloor";
+            this.txtRoomFloor.Size = new System.Drawing.Size(166, 31);
+            this.txtRoomFloor.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.txtRoomFloor.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtRoomFloor.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtRoomFloor.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnThemTK.OverrideDefault.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.btnThemTK.OverrideDefault.Border.Rounding = 6;
-            this.btnThemTK.OverrideDefault.Border.Width = 1;
-            this.btnThemTK.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.btnThemTK.Size = new System.Drawing.Size(125, 36);
-            this.btnThemTK.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.btnThemTK.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.btnThemTK.StateCommon.Back.ColorAngle = 45F;
-            this.btnThemTK.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.btnThemTK.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.btnThemTK.StateCommon.Border.ColorAngle = 45F;
-            this.btnThemTK.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.txtRoomFloor.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.txtRoomFloor.StateCommon.Border.Rounding = 6;
+            this.txtRoomFloor.StateCommon.Border.Width = 1;
+            this.txtRoomFloor.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(51)))));
+            this.txtRoomFloor.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRoomFloor.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.txtRoomFloor.StateDisabled.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.txtRoomFloor.TabIndex = 131;
+            this.txtRoomFloor.WordWrap = false;
+            this.txtRoomFloor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRoomFloor_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto", 9.75F);
+            this.label3.Location = new System.Drawing.Point(312, 70);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 15);
+            this.label3.TabIndex = 132;
+            this.label3.Text = "Tầng:";
+            // 
+            // btnThem
+            // 
+            this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThem.Location = new System.Drawing.Point(169, 146);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.btnThem.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.btnThem.OverrideDefault.Back.ColorAngle = 45F;
+            this.btnThem.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.btnThem.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.btnThem.OverrideDefault.Border.ColorAngle = 45F;
+            this.btnThem.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnThemTK.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.btnThemTK.StateCommon.Border.Rounding = 6;
-            this.btnThemTK.StateCommon.Border.Width = 1;
-            this.btnThemTK.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.btnThemTK.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.btnThemTK.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemTK.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.btnThemTK.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.btnThemTK.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.btnThemTK.StateDisabled.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.btnThemTK.StateDisabled.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.btnThem.OverrideDefault.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.btnThem.OverrideDefault.Border.Rounding = 6;
+            this.btnThem.OverrideDefault.Border.Width = 1;
+            this.btnThem.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.btnThem.Size = new System.Drawing.Size(125, 36);
+            this.btnThem.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.btnThem.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.btnThem.StateCommon.Back.ColorAngle = 45F;
+            this.btnThem.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.btnThem.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.btnThem.StateCommon.Border.ColorAngle = 45F;
+            this.btnThem.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnThemTK.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(97)))), ((int)(((byte)(212)))));
-            this.btnThemTK.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(97)))), ((int)(((byte)(212)))));
-            this.btnThemTK.StatePressed.Back.ColorAngle = 135F;
-            this.btnThemTK.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.btnThemTK.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.btnThemTK.StatePressed.Border.ColorAngle = 135F;
-            this.btnThemTK.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.btnThem.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.btnThem.StateCommon.Border.Rounding = 6;
+            this.btnThem.StateCommon.Border.Width = 1;
+            this.btnThem.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.btnThem.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.btnThem.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.StateDisabled.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.btnThem.StateDisabled.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.btnThem.StateDisabled.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.btnThem.StateDisabled.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.btnThem.StateDisabled.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnThemTK.StatePressed.Border.Rounding = 6;
-            this.btnThemTK.StatePressed.Border.Width = 1;
-            this.btnThemTK.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(97)))), ((int)(((byte)(212)))));
-            this.btnThemTK.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(97)))), ((int)(((byte)(212)))));
-            this.btnThemTK.StateTracking.Back.ColorAngle = 45F;
-            this.btnThemTK.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.btnThemTK.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.btnThemTK.StateTracking.Border.ColorAngle = 45F;
-            this.btnThemTK.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.btnThem.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(97)))), ((int)(((byte)(212)))));
+            this.btnThem.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(97)))), ((int)(((byte)(212)))));
+            this.btnThem.StatePressed.Back.ColorAngle = 135F;
+            this.btnThem.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.btnThem.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.btnThem.StatePressed.Border.ColorAngle = 135F;
+            this.btnThem.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.btnThemTK.StateTracking.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.btnThemTK.StateTracking.Border.Width = 1;
-            this.btnThemTK.TabIndex = 9;
-            this.btnThemTK.Values.Text = "Thêm";
-            this.btnThemTK.Click += new System.EventHandler(this.btnThemTK_Click);
+            this.btnThem.StatePressed.Border.Rounding = 6;
+            this.btnThem.StatePressed.Border.Width = 1;
+            this.btnThem.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(97)))), ((int)(((byte)(212)))));
+            this.btnThem.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(97)))), ((int)(((byte)(212)))));
+            this.btnThem.StateTracking.Back.ColorAngle = 45F;
+            this.btnThem.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.btnThem.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.btnThem.StateTracking.Border.ColorAngle = 45F;
+            this.btnThem.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.btnThem.StateTracking.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.btnThem.StateTracking.Border.Width = 1;
+            this.btnThem.TabIndex = 9;
+            this.btnThem.Values.Text = "Thêm phòng";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnThoat
             // 
             this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThoat.Location = new System.Drawing.Point(522, 27);
+            this.btnThoat.Location = new System.Drawing.Point(318, 146);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(34)))), ((int)(((byte)(45)))));
@@ -186,7 +258,7 @@
             // btnLamMoi
             // 
             this.btnLamMoi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLamMoi.Location = new System.Drawing.Point(204, 27);
+            this.btnLamMoi.Location = new System.Drawing.Point(20, 146);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(2);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
@@ -244,34 +316,10 @@
             this.btnLamMoi.Values.Text = "Làm mới";
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
-            // txtCost
-            // 
-            this.txtCost.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtCost.Location = new System.Drawing.Point(151, 103);
-            this.txtCost.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCost.Name = "txtCost";
-            this.txtCost.Size = new System.Drawing.Size(166, 31);
-            this.txtCost.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
-            this.txtCost.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtCost.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtCost.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtCost.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.txtCost.StateCommon.Border.Rounding = 6;
-            this.txtCost.StateCommon.Border.Width = 1;
-            this.txtCost.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(51)))));
-            this.txtCost.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCost.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.txtCost.StateDisabled.Back.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.txtCost.TabIndex = 79;
-            this.txtCost.WordWrap = false;
-            this.txtCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCost_KeyPress);
-            // 
             // txtRoomId
             // 
             this.txtRoomId.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtRoomId.Location = new System.Drawing.Point(151, 42);
+            this.txtRoomId.Location = new System.Drawing.Point(91, 22);
             this.txtRoomId.Margin = new System.Windows.Forms.Padding(2);
             this.txtRoomId.Name = "txtRoomId";
             this.txtRoomId.Size = new System.Drawing.Size(166, 31);
@@ -288,78 +336,38 @@
             this.txtRoomId.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRoomId.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.txtRoomId.StateDisabled.Back.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.txtRoomId.TabIndex = 78;
+            this.txtRoomId.TabIndex = 119;
             this.txtRoomId.WordWrap = false;
             this.txtRoomId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRoomId_KeyPress);
             // 
-            // txtRoomFloor
+            // txtCost
             // 
-            this.txtRoomFloor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtRoomFloor.Location = new System.Drawing.Point(522, 103);
-            this.txtRoomFloor.Margin = new System.Windows.Forms.Padding(2);
-            this.txtRoomFloor.Name = "txtRoomFloor";
-            this.txtRoomFloor.Size = new System.Drawing.Size(166, 31);
-            this.txtRoomFloor.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
-            this.txtRoomFloor.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtRoomFloor.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtRoomFloor.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.txtCost.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtCost.Location = new System.Drawing.Point(408, 22);
+            this.txtCost.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCost.Name = "txtCost";
+            this.txtCost.Size = new System.Drawing.Size(166, 31);
+            this.txtCost.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.txtCost.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtCost.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtCost.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.txtRoomFloor.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.txtRoomFloor.StateCommon.Border.Rounding = 6;
-            this.txtRoomFloor.StateCommon.Border.Width = 1;
-            this.txtRoomFloor.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(51)))));
-            this.txtRoomFloor.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRoomFloor.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.txtRoomFloor.StateDisabled.Back.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.txtRoomFloor.TabIndex = 83;
-            this.txtRoomFloor.WordWrap = false;
-            this.txtRoomFloor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRoomFloor_KeyPress);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Roboto", 9.75F);
-            this.label5.Location = new System.Drawing.Point(421, 111);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 15);
-            this.label5.TabIndex = 89;
-            this.label5.Text = "Tầng:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 9.75F);
-            this.label1.Location = new System.Drawing.Point(50, 111);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 15);
-            this.label1.TabIndex = 86;
-            this.label1.Text = "Giá tiền:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Roboto", 9.75F);
-            this.label15.Location = new System.Drawing.Point(50, 50);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(66, 15);
-            this.label15.TabIndex = 85;
-            this.label15.Text = "Mã phòng:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 9.75F);
-            this.label2.Location = new System.Drawing.Point(421, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 15);
-            this.label2.TabIndex = 89;
-            this.label2.Text = "Diện tích:";
+            this.txtCost.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.txtCost.StateCommon.Border.Rounding = 6;
+            this.txtCost.StateCommon.Border.Width = 1;
+            this.txtCost.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(51)))));
+            this.txtCost.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCost.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.txtCost.StateDisabled.Back.Color1 = System.Drawing.Color.WhiteSmoke;
+            this.txtCost.TabIndex = 120;
+            this.txtCost.WordWrap = false;
+            this.txtCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCost_KeyPress);
             // 
             // txtRoomArea
             // 
             this.txtRoomArea.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtRoomArea.Location = new System.Drawing.Point(522, 42);
+            this.txtRoomArea.Location = new System.Drawing.Point(91, 62);
             this.txtRoomArea.Margin = new System.Windows.Forms.Padding(2);
             this.txtRoomArea.Name = "txtRoomArea";
             this.txtRoomArea.Size = new System.Drawing.Size(166, 31);
@@ -376,48 +384,74 @@
             this.txtRoomArea.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRoomArea.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.txtRoomArea.StateDisabled.Back.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.txtRoomArea.TabIndex = 83;
+            this.txtRoomArea.TabIndex = 123;
             this.txtRoomArea.WordWrap = false;
             this.txtRoomArea.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRoomArea_KeyPress);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Roboto", 9.75F);
+            this.label13.Location = new System.Drawing.Point(20, 70);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(60, 15);
+            this.label13.TabIndex = 129;
+            this.label13.Text = "Diện tích:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Roboto", 9.75F);
+            this.label21.Location = new System.Drawing.Point(20, 30);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(66, 15);
+            this.label21.TabIndex = 126;
+            this.label21.Text = "Mã phòng:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Roboto", 9.75F);
+            this.label22.Location = new System.Drawing.Point(312, 30);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(91, 15);
+            this.label22.TabIndex = 125;
+            this.label22.Text = "Giá tiền (VND):";
             // 
             // AddNewRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(850, 334);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtCost);
-            this.Controls.Add(this.txtRoomId);
-            this.Controls.Add(this.txtRoomArea);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtRoomFloor);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label15);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1064, 729);
+            this.Controls.Add(this.grpThongTinTaiKhoan);
+            this.Controls.Add(this.panel6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddNewRoom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddNewRoom";
-            this.panel1.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.grpThongTinTaiKhoan.ResumeLayout(false);
+            this.grpThongTinTaiKhoan.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton btnThemTK;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label lbl_QLTaiKhoan;
+        private Guna.UI.WinForms.GunaGroupBox grpThongTinTaiKhoan;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtRoomFloor;
+        private System.Windows.Forms.Label label3;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton btnThem;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnThoat;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnLamMoi;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtCost;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtRoomId;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtRoomFloor;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label2;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtCost;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtRoomArea;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
     }
 }

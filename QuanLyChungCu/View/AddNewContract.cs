@@ -15,10 +15,13 @@ namespace QuanLyChungCu.View
     {
         public static string text = "";
         Controller.ContractCtrl contractCtrl = new Controller.ContractCtrl();
+        Controller.TenantCtrl tenantCtrl = new Controller.TenantCtrl();
         Model.ContractManage contractMng = new Model.ContractManage();
         Object.ObjContract contract = new Object.ObjContract();
-        Object.ObjCustomerDetail customer = new Object.ObjCustomerDetail();
+        Object.ObjDweller dweller = new Object.ObjDweller();
+        Controller.DwellerCtrl dwellerCtrl = new Controller.DwellerCtrl();
         Object.ObjRoom room = new Object.ObjRoom();
+        Object.ObjTenant tenant = new Object.ObjTenant();
 
         public AddNewContract()
         {
@@ -27,10 +30,11 @@ namespace QuanLyChungCu.View
 
         private void AddNewContract_Load(object sender, EventArgs e)
         {
-            txtBirthdayCustomer.Enabled = false;
+            txtTenantBirthday.Enabled = false;
+
             txtDateStart.Enabled = false;
             txtDateEnd.Enabled = false;
-            button3.Enabled = false;
+            btnDateEnd.Enabled = false;
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
@@ -38,26 +42,18 @@ namespace QuanLyChungCu.View
             LamMoi();
         }
 
-        private void btnThemTK_Click(object sender, EventArgs e)
+        private void btnThemHopDong_Click(object sender, EventArgs e)
         {
             if (checkNullItem())
             {
-                GanDuLieu(contract, customer);
+                GanDuLieu(contract, dweller, tenant);
                 CapNhatTrangThaiPhong(room);
-                int resultCustomer = contractCtrl.ThemNguoiDung(customer);
                 int resultContract = contractCtrl.ThemHopDong(contract);
                 DateTime dateStart = DateTime.Parse(txtDateStart.Text);
                 DateTime dateEnd = DateTime.Parse(txtDateEnd.Text);
                 int resultDate = DateTime.Compare(dateStart, dateEnd);
-                if (resultCustomer == 0 || resultContract == 0 || resultContract == 2 || resultDate >= 0)
+                if (resultContract == 0 || resultContract == 2 || resultDate >= 0)
                 {
-                    if (resultCustomer == 0)
-                    {
-                        text = "Vui lòng chọn mã người dùng khác!";
-                        ThongBao(text);
-                        return;
-                    }
-
                     if (resultContract == 0)
                     {
                         text = "Vui lòng chọn mã phòng khác!";
@@ -66,21 +62,27 @@ namespace QuanLyChungCu.View
                     }
                     else if (resultContract == 2)
                     {
-                        text = "Phòng đã được thuê, vui lòng chọn mã phòng khác!";
+                        text = "Người thuê đang sở hữu một hợp đồng khác!";
                         ThongBao(text);
                         return;
                     }
-
                     if (resultDate >= 0)
                     {
-                        text = "Vui lòng chọn ngày hết hạn lớn hơn ngày đăng ký!";
-                        ThongBao(text);
+                        ThongBao("Vui lòng chọn ngày hết hạn lớn hơn ngày đăng ký!");
                         return;
                     }
                 }
                 else
                 {
-                    contractMng.SaveCustomer(customer);
+                    if (contractCtrl.KTNguoiThue(contract.TenantIdCard))
+                    {
+                        tenantCtrl.Them(tenant);
+                    }
+                    else
+                    {
+                        tenantCtrl.Update(tenant);
+                    }
+                    dwellerCtrl.Them(dweller);
                     contractMng.Save(contract);
                     MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     contractCtrl.CapNhatPhong(room);
@@ -104,36 +106,45 @@ namespace QuanLyChungCu.View
 
         private bool checkNullItem()
         {
-            if (txtCustomerId.Text == " " || txtNameCustomer.Text == "" || txtEmailCustomer.Text == "" ||
-                cbbGioiTinh.Text == "" || txtBirthdayCustomer.Text == "" || txtIdentityCustomer.Text == "" ||
-                txtRoomId.Text == "" || txtDateStart.Text == "" || txtDateEnd.Text == "")
+            if (txtTenantPhoneNumber.Text == " " || txtTenantName.Text == "" || txtTenantEmail.Text == "" ||
+                cbbTenantGender.Text == "" || txtTenantBirthday.Text == "" || txtTenantIdCard.Text == "" ||
+                txtRoomId.Text == "" || txtDateStart.Text == "" || txtDateEnd.Text == "" ||
+                txtBank.Text == "" || txtCreditNumber.Text == "")
             {
                 return false;
             }
             return true;
         }
 
-        //Hàm xử lý lưu dữ liệu.
-        private void GanDuLieu(Object.ObjContract contract, Object.ObjCustomerDetail customer)
+        private void GanDuLieu(Object.ObjContract contract, Object.ObjDweller dweller, Object.ObjTenant tenant)
         {
-            customer.CustomerId = txtCustomerId.Text.Trim();
-            customer.CustomerName = txtNameCustomer.Text.Trim();
-            customer.CustomerEmail = txtEmailCustomer.Text.Trim();
-            customer.CustomerGender = cbbGioiTinh.Text.Trim();
-            customer.CustomerBirthday = txtBirthdayCustomer.Text.Trim();
-            customer.CustomerIdentityCard = txtIdentityCustomer.Text.Trim();
-            customer.RoomId = txtRoomId.Text.Trim();
+            dweller.DwellerName = txtTenantName.Text.Trim();
+            dweller.DwellerGender = cbbTenantGender.Text.Trim();
+            dweller.DwellerBirthday = txtTenantBirthday.Text.Trim();
+            dweller.DwellerIdCard = txtTenantIdCard.Text.Trim();
+            dweller.DwellerStatus = "1";
+            dweller.DwellerStatusTitle = "Đang ở";
+            dweller.TenantIdCard = txtTenantIdCard.Text.Trim();
 
+            contract.TenantIdCard = txtTenantIdCard.Text.Trim();
             contract.RoomId = txtRoomId.Text.Trim();
             contract.DateStart = txtDateStart.Text.Trim();
             contract.DateEnd = txtDateEnd.Text.Trim();
-            contract.CustomerId = txtCustomerId.Text.Trim();
+            contract.ContractStatus = "2";
+            contract.ContractStatusTitle = "Đang hiệu lực";
+
+            tenant.TenantIdCard = txtTenantIdCard.Text.Trim();
+            tenant.TenantEmail = txtTenantEmail.Text.Trim();
+            tenant.TenantPhoneNumber = txtTenantPhoneNumber.Text.Trim();
+            tenant.CreditNumber = txtCreditNumber.Text.Trim();
+            tenant.Bank = txtBank.Text.Trim();
         }
 
         private void CapNhatTrangThaiPhong(Object.ObjRoom room)
         {
             room.RoomId = txtRoomId.Text.Trim();
-            room.RoomStatus = "Đã được thuê";
+            room.RoomStatus = "1";
+            room.RoomStatusTitle = "Đã được thuê";
         }
 
         //Hàm xử lý thông báo lỗi.
@@ -144,43 +155,16 @@ namespace QuanLyChungCu.View
 
         private void LamMoi()
         {
-            txtCustomerId.Clear();
-            txtNameCustomer.Clear();
-            txtEmailCustomer.Clear();
-            cbbGioiTinh.Text = "";
-            txtBirthdayCustomer.Clear();
-            txtIdentityCustomer.Clear();
+            txtTenantPhoneNumber.Clear();
+            txtTenantName.Clear();
+            txtTenantEmail.Clear();
+            txtTenantBirthday.Clear();
+            txtTenantIdCard.Clear();
             txtRoomId.Clear();
             txtDateStart.Clear();
             txtDateEnd.Clear();
-            button3.Enabled = false;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            setCalendar(txtBirthdayCustomer, mntNgaySinh);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            mntDateStart.MinDate = DateTime.Today;
-            setCalendar(txtDateStart, mntDateStart);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (txtDateStart.Text == "")
-            {
-                mntDateEnd.MinDate = DateTime.Now;
-            }
-            else
-            {
-                DateTime dateEnd = DateTime.Parse(txtDateStart.Text);
-                DateTime date;
-                date = dateEnd.AddMonths(1);
-                mntDateEnd.MinDate = date;
-                setCalendar(txtDateEnd, mntDateEnd);
-            }
+            txtCreditNumber.Clear();
+            txtBank.Clear();
         }
 
         private void setCalendar(KryptonTextBox textBox, MonthCalendar monthCalendar)
@@ -193,22 +177,11 @@ namespace QuanLyChungCu.View
             monthCalendar.Visible = true;
         }
 
-        private void mntNgaySinh_DateSelected(object sender, DateRangeEventArgs e)
-        {
-            txtBirthdayCustomer.Text = mntNgaySinh.SelectionStart.ToShortDateString();
-            mntNgaySinh.Visible = false;
-        }
-
-        private void mntNgaySinh_MouseLeave(object sender, EventArgs e)
-        {
-            mntNgaySinh.Visible = false;
-        }
-
         private void mntDateStart_DateSelected(object sender, DateRangeEventArgs e)
         {
             txtDateStart.Text = mntDateStart.SelectionStart.ToShortDateString();
             mntDateStart.Visible = false;
-            button3.Enabled = true;
+            btnDateEnd.Enabled = true;
         }
 
         private void mntDateStart_MouseLeave(object sender, EventArgs e)
@@ -227,41 +200,65 @@ namespace QuanLyChungCu.View
             mntDateEnd.Visible = false;
         }
 
-        private void txtCustomerId_KeyPress(object sender, KeyPressEventArgs e)
+        private void ValidNumber(KeyPressEventArgs e)
         {
-            //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
         }
 
-        private void cbbGioiTinh_KeyPress(object sender, KeyPressEventArgs e)
+        private void btnTenantBirthday_Click(object sender, EventArgs e)
         {
-            //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            setCalendar(txtTenantBirthday, mntTenantBirthday);
+        }
+
+        private void mntTenantBirthday_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            txtTenantBirthday.Text = mntTenantBirthday.SelectionStart.ToShortDateString();
+            mntTenantBirthday.Visible = false;
+        }
+
+        private void mntTenantBirthday_MouseLeave(object sender, EventArgs e)
+        {
+            mntTenantBirthday.Visible = false;
+        }
+
+        private void btnDateStart_Click(object sender, EventArgs e)
+        {
+            mntDateStart.MinDate = DateTime.Today;
+            setCalendar(txtDateStart, mntDateStart);
+        }
+
+        private void btnDateEnd_Click(object sender, EventArgs e)
+        {
+            if (txtDateStart.Text == "")
             {
-                e.Handled = true;
+                mntDateEnd.MinDate = DateTime.Now;
+            }
+            else
+            {
+                DateTime dateEnd = DateTime.Parse(txtDateStart.Text);
+                DateTime date;
+                date = dateEnd.AddMonths(1);
+                mntDateEnd.MinDate = date;
+                setCalendar(txtDateEnd, mntDateEnd);
             }
         }
 
-        private void txtIdentityCustomer_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtTenantIdCard_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            ValidNumber(e);
         }
 
-        private void txtRoomId_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtTenantPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            ValidNumber(e);
         }
 
+        private void txtCreditNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidNumber(e);
+        }
     }
 }

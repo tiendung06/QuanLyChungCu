@@ -86,8 +86,7 @@ namespace QuanLyChungCu.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            BieuDoTBThanhLy bieuDoTBThanhLy = new BieuDoTBThanhLy();
-            bieuDoTBThanhLy.Show();
+            
         }
 
         private void QLThongKe_Load(object sender, EventArgs e)

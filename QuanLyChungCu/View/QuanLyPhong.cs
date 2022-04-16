@@ -26,7 +26,7 @@ namespace QuanLyChungCu.View
         {
             if (Login.resultLogin != 1)
             {
-                
+
                 btnThemTK.Enabled = false;
             }
             RoomManage.HienThi(dgvDSChiTietPhong);
@@ -45,7 +45,7 @@ namespace QuanLyChungCu.View
                 txtCost.Text = dgvDSChiTietPhong.CurrentRow.Cells["Cost"].Value.ToString();
                 txtRoomArea.Text = dgvDSChiTietPhong.CurrentRow.Cells["RoomArea"].Value.ToString();
                 txtRoomFloor.Text = dgvDSChiTietPhong.CurrentRow.Cells["RoomFloor"].Value.ToString();
-                txtRoomStatus.Text = dgvDSChiTietPhong.CurrentRow.Cells["RoomStatus"].Value.ToString();
+                txtRoomStatus.Text = dgvDSChiTietPhong.CurrentRow.Cells["RoomStatusTitle"].Value.ToString();
             }
         }
 
@@ -69,13 +69,12 @@ namespace QuanLyChungCu.View
         {
             if (checkNullTextBox() == false)
             {
-                MessageBox.Show("Xin mời nhập đầy đủ thông tin!", "Cảnh báo");
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Cảnh báo");
             }
             else
             {
                 Object.ObjRoom objRoom = new Object.ObjRoom();
                 SetDataRoom(objRoom);
-
                 string RoomId = dgvDSChiTietPhong.CurrentRow.Cells[0].Value.ToString();
                 DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn đổi dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dlg == DialogResult.Yes)
@@ -104,7 +103,7 @@ namespace QuanLyChungCu.View
             }
             if (txtRoomArea.Text.Trim() == "")
             {
-                errRoomArea.SetError(txtCost, "Nhập vào diện tích phòng");
+                errRoomArea.SetError(txtRoomArea, "Nhập vào diện tích phòng");
                 return false;
             }
             if (txtRoomFloor.Text.Trim() == "")
@@ -140,6 +139,10 @@ namespace QuanLyChungCu.View
         private void btnThemTK_Click(object sender, EventArgs e)
         {
             View.AddNewRoom addNewRoom = new AddNewRoom();
+            addNewRoom.TopLevel = false;
+            this.Controls.Add(addNewRoom);
+            addNewRoom.Dock = DockStyle.Fill;
+            addNewRoom.BringToFront();
             addNewRoom.Show();
         }
 
@@ -160,8 +163,7 @@ namespace QuanLyChungCu.View
                 }
                 else
                 {
-                    text = "Vui lòng nhập vào một số nếu tìm kiếm theo mã phòng!";
-                    ThongBao(text);
+                    ThongBao("Vui lòng nhập vào một số nếu tìm kiếm theo mã phòng!");
                 }
             }
         }

@@ -23,7 +23,6 @@ namespace QuanLyChungCu.HelperData
                 conn.Open();
         }
 
-
         public DataSet LayDuLieu(SqlCommand sqlcmd)
         {
             DataSet ds = new DataSet();
@@ -48,18 +47,6 @@ namespace QuanLyChungCu.HelperData
                 return -9999;
             }
 
-        }
-
-        public bool CheckStatusLogin()
-        {
-            if(Login.resultLogin == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
         }
     }
 }

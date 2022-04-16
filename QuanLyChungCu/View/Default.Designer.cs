@@ -91,6 +91,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Default";
             this.Text = "Default";
+            this.Load += new System.EventHandler(this.Default_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -20,6 +20,16 @@ namespace QuanLyChungCu.View
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            setTime();
+        }
+
+        private void Default_Load(object sender, EventArgs e)
+        {
+            setTime();
+        }
+
+        private void setTime()
+        {
             DateTime datetime = DateTime.Now;
             this.label1.Left = (this.label1.Parent.Width - this.label1.Width) / 2;
             this.lbtGio.Text = datetime.ToString("HH:mm:ss");

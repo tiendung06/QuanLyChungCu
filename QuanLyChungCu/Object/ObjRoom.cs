@@ -47,5 +47,13 @@ namespace QuanLyChungCu.Object
             get { return _RoomStatus; }
             set { _RoomStatus = value; }
         }
+
+        private string _RoomStatusTitle;
+
+        public string RoomStatusTitle
+        {
+            get { return _RoomStatusTitle; }
+            set { _RoomStatusTitle = value; }
+        }
     }
 }

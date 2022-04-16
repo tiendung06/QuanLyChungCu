@@ -17,7 +17,7 @@ namespace QuanLyChungCu.Model
         public DataSet GetDataRoom(string idRoom)
         {
             SqlCommand sqlcmd;
-            sqlcmd = new SqlCommand("SELECT * FROM Room");
+            sqlcmd = new SqlCommand("SELECT RoomId, Cost, RoomFloor, RoomArea, RoomStatusTitle FROM Room");
             return cls.LayDuLieu(sqlcmd);
         }
 
@@ -29,12 +29,13 @@ namespace QuanLyChungCu.Model
         public int Update(Object.ObjRoom room)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "UPDATE Room SET Cost = @cost, RoomFloor = @floor, RoomArea = @area, RoomStatus = @status WHERE RoomId = @id";
-
+            cmd.CommandText = "UPDATE Room SET Cost = @cost, RoomFloor = @floor, RoomArea = @area, RoomStatus = @status, RoomStatusTitle = @title" +
+                " WHERE RoomId = @id";
             cmd.Parameters.Add("cost", SqlDbType.Float).Value = room.Cost;
             cmd.Parameters.Add("floor", SqlDbType.Int).Value = room.RoomFloor;
             cmd.Parameters.Add("area", SqlDbType.Float).Value = room.RoomArea;
-            cmd.Parameters.Add("status", SqlDbType.NVarChar).Value = room.RoomStatus;
+            cmd.Parameters.Add("status", SqlDbType.Int).Value = room.RoomStatus;
+            cmd.Parameters.Add("title", SqlDbType.NVarChar).Value = room.RoomStatusTitle;
             cmd.Parameters.Add("id", SqlDbType.Int).Value = room.RoomId;
 
             return cls.CapNhatDL(cmd);
@@ -44,21 +45,20 @@ namespace QuanLyChungCu.Model
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "INSERT INTO " +
-                "Room(RoomId, Cost, RoomFloor, RoomArea, RoomStatus) " +
-                "VALUES (@id, @cost, @floor, @area, @status)";
-
+                "Room(RoomId, Cost, RoomFloor, RoomArea, RoomStatus, RoomStatusTitle) " +
+                "VALUES (@id, @cost, @floor, @area, @status, @title)";
             cmd.Parameters.Add("id", SqlDbType.Int).Value = cdt.RoomId;
             cmd.Parameters.Add("cost", SqlDbType.Float).Value = cdt.Cost;
             cmd.Parameters.Add("floor", SqlDbType.Int).Value = cdt.RoomFloor;
             cmd.Parameters.Add("area", SqlDbType.Float).Value= cdt.RoomArea;
-            cmd.Parameters.Add("status", SqlDbType.NVarChar).Value = cdt.RoomStatus;
-
+            cmd.Parameters.Add("status", SqlDbType.Int).Value = cdt.RoomStatus;
+            cmd.Parameters.Add("title", SqlDbType.NVarChar).Value = cdt.RoomStatusTitle;
             return cls.CapNhatDL(cmd);
         }
 
         public DataSet getListCustomerDetail(string key, string tieuchi)
         {
-            string sql = "SELECT * FROM Room WHERE ";
+            string sql = "SELECT RoomId, Cost, RoomFloor, RoomArea, RoomStatusTitle FROM Room WHERE ";
 
             switch (tieuchi)
             {

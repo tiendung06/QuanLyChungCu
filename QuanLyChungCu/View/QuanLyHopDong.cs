@@ -1,4 +1,5 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
+using QuanLyChungCu.Controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,9 +16,11 @@ namespace QuanLyChungCu.View
     {
         public static string text = "";
         string[] optionFind = { "Mã hợp đồng", "Mã phòng" };
-        Model.ContractManage ContractManage = new Model.ContractManage();
-        Controller.ContractCtrl contractCtrl = new Controller.ContractCtrl();
+        Object.ObjContract contract = new Object.ObjContract();
+        Model.ContractManage contractManage = new Model.ContractManage();
+        ContractCtrl contractCtrl = new ContractCtrl();
         Object.ObjRoom room = new Object.ObjRoom();
+        DwellerCtrl dwellerCtrl = new DwellerCtrl();
         DateTime currentDate = DateTime.Today;
 
         public QuanLyHopDong()
@@ -29,16 +32,19 @@ namespace QuanLyChungCu.View
         {
             if (Login.resultLogin != 1)
             {
-                btnXoa.Enabled = false;
-                btnThemTK.Enabled = false;
+                btnXoa.Visible = false;
+                btnThemHopDong.Visible = false;
+                btnCapNhat.Visible = false;
             }
-            ContractManage.HienThi(dgvDSChiTietHopDong);
+            contractManage.HienThi(dgvDSChiTietHopDong);
             HienThiThongTin();
             optionCombobox.DataSource = optionFind;
             txtContractId.Enabled = false;
             txtRoomId.Enabled = false;
             txtDateStart.Enabled = false;
             txtDateEnd.Enabled = false;
+            txtContractStatus.Enabled = false;
+            txtTenantIdCard.Enabled = false;
         }
 
         private void QuanLyHopDong_Shown(object sender, EventArgs e)
@@ -52,9 +58,10 @@ namespace QuanLyChungCu.View
             {
                 txtContractId.Text = dgvDSChiTietHopDong.CurrentRow.Cells["ContractId"].Value.ToString();
                 txtRoomId.Text = dgvDSChiTietHopDong.CurrentRow.Cells["RoomId"].Value.ToString();
-                txtCustomerId.Text = dgvDSChiTietHopDong.CurrentRow.Cells["CustomerId"].Value.ToString();
+                txtTenantIdCard.Text = dgvDSChiTietHopDong.CurrentRow.Cells["TenantIdCard"].Value.ToString();
                 txtDateStart.Text = dgvDSChiTietHopDong.CurrentRow.Cells["DateStart"].Value.ToString();
                 txtDateEnd.Text = dgvDSChiTietHopDong.CurrentRow.Cells["DateEnd"].Value.ToString();
+                txtContractStatus.Text = dgvDSChiTietHopDong.CurrentRow.Cells["ContractStatusTitle"].Value.ToString();
             }
         }
 
@@ -63,13 +70,13 @@ namespace QuanLyChungCu.View
             HienThiThongTin();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnDateStart_Click(object sender, EventArgs e)
         {
             mntDateStart.MinDate = DateTime.Parse(dgvDSChiTietHopDong.CurrentRow.Cells["DateStart"].Value.ToString());
             setCalendar(txtDateStart, mntDateStart);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnDateEnd_Click(object sender, EventArgs e)
         {
             mntDateEnd.MinDate = currentDate;
             setCalendar(txtDateEnd, mntDateEnd);
@@ -87,10 +94,10 @@ namespace QuanLyChungCu.View
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            ContractManage.HienThi(dgvDSChiTietHopDong);
+            contractManage.HienThi(dgvDSChiTietHopDong);
             txtContractId.Clear();
             txtRoomId.Clear();
-            txtCustomerId.Clear();
+            txtTenantIdCard.Clear();
             txtDateStart.Clear();
             txtDateEnd.Clear();
             txtTimKiem.Clear();
@@ -100,48 +107,51 @@ namespace QuanLyChungCu.View
         {
             if (checkNullTextBox() == false)
             {
-                MessageBox.Show("Xin mời nhập đầy đủ thông tin!", "Cảnh báo");
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Cảnh báo");
             }
             else
             {
-                Object.ObjContract objContract = new Object.ObjContract();
-                SetDataContract(objContract);
+                SetDataContract(contract);
                 DateTime dateStart = DateTime.Parse(txtDateStart.Text);
                 DateTime dateEnd = DateTime.Parse(txtDateEnd.Text);
-                DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn đổi dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dlg = MessageBox.Show("Bạn có muốn thay đổi dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dlg == DialogResult.Yes)
                 {
                     if (calculateTime(dateStart, dateEnd) >= 30)
                     {
-                        if (contractCtrl.KiemTraNguoiDung(objContract) == 1)
+                        if (dwellerCtrl.KTCMNDNguoiThue(contract.TenantIdCard))
                         {
-                            if (contractCtrl.Update(objContract) > 0)
+                            if (contractCtrl.Update(contract) > 0)
                             {
                                 MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                ContractManage.HienThi(dgvDSChiTietHopDong);
+                                contractManage.HienThi(dgvDSChiTietHopDong);
                                 HienThiThongTin();
                             }
                             else
                             {
-                                MessageBox.Show("Mã phòng không tồn tại, vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                ThongBao("Cập nhật không thành công!");
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Nguời dùng không thuộc phòng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            ThongBao("Mã số chứng minh nhân dân người đứng tên không tồn tại!");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Thời gian thuê tối thiểu là 30 ngày!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ThongBao("Thời gian thuê tối thiểu là 30 ngày!");
                     }
                 }
             }
         }
 
-        private void btnThemTK_Click(object sender, EventArgs e)
+        private void btnThemHopDong_Click(object sender, EventArgs e)
         {
             View.AddNewContract addNewContract = new AddNewContract();
+            addNewContract.TopLevel = false;
+            panelQuanLyHopDong.Controls.Add(addNewContract);
+            addNewContract.Dock = DockStyle.Fill;
+            addNewContract.BringToFront();
             addNewContract.Show();
         }
 
@@ -153,39 +163,38 @@ namespace QuanLyChungCu.View
             }
             else
             {
-                string contractId = dgvDSChiTietHopDong.CurrentRow.Cells["ContractId"].Value.ToString();
-                string roomId = dgvDSChiTietHopDong.CurrentRow.Cells["RoomId"].Value.ToString();
-                DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                SetDataContract(contract);
+                contract.ContractStatus = "0";
+                contract.ContractStatusTitle = "Hết hiệu lực";
+                string contractId = dgvDSChiTietHopDong.CurrentRow.Cells[0].Value.ToString();
+                DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn hủy hợp đồng này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dlg == DialogResult.Yes)
-                {                   
-                    CapNhatTrangThaiPhong(room, roomId);
-                    {
-                        switch (contractCtrl.CapNhatPhong(room))
-                        {
-                            case 1:
-                                break;
-                        }
-                    }
-                    deleteContract(contractId, roomId);
-                    MessageBox.Show("Xóa hợp đồng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                {
+                    deleteContract(contractId);
                 }
             }
         }
 
-        private void deleteContract(string contractId, string roomId)
+        private void btnXuatHopDong_Click(object sender, EventArgs e)
         {
-            //delete in table customer detail
-            if (contractCtrl.Xoa(contractId) != -9999)
-            {               
-                if (contractCtrl.XoaNguoiDung(roomId) != -9999)
-                {
-                    contractCtrl.HienThi(dgvDSChiTietHopDong, contractId);
-                    HienThiThongTin();
-                }
+            string contractId = dgvDSChiTietHopDong.CurrentRow.Cells[0].Value.ToString();
+            ExportWord export = new ExportWord();
+            export.GetDataTenant(contractId);
+            export.GetDataRoom(contractId);
+            export.FillDataContract();
+        }
+
+        private void deleteContract(string contractId)
+        {
+            if (contractCtrl.Update(contract) > 0)
+            {
+                MessageBox.Show("Hủy hợp đồng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                contractCtrl.HienThi(dgvDSChiTietHopDong, contractId);
+                HienThiThongTin();
             }
             else
             {
-                MessageBox.Show("Không thể xóa hợp đồng này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không thể hủy hợp đồng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -201,9 +210,9 @@ namespace QuanLyChungCu.View
                 errRoomId.SetError(txtRoomId, "Nhập vào mã phòng");
                 return false;
             }
-            if (txtCustomerId.Text.Trim() == "")
+            if (txtTenantIdCard.Text.Trim() == "")
             {
-                errCustomerId.SetError(txtCustomerId, "Nhập vào mã người dùng");
+                errTenantId.SetError(txtTenantIdCard, "Nhập vào mã người dùng");
                 return false;
             }
             if (txtDateStart.Text.Trim() == "")
@@ -220,7 +229,7 @@ namespace QuanLyChungCu.View
             {
                 errContractId.SetError(txtContractId, "");
                 errRoomId.SetError(txtRoomId, "");
-                errCustomerId.SetError(txtCustomerId, "");
+                errTenantId.SetError(txtTenantIdCard, "");
                 errDateStart.SetError(txtDateStart, "");
                 errDateEnd.SetError(txtDateEnd, "");
                 return true;
@@ -231,15 +240,17 @@ namespace QuanLyChungCu.View
         {
             contract.ContractId = txtContractId.Text;
             contract.RoomId = txtRoomId.Text;
-            contract.CustomerId = txtCustomerId.Text;
+            contract.TenantIdCard = txtTenantIdCard.Text;
             contract.DateStart = txtDateStart.Text;
             contract.DateEnd = txtDateEnd.Text;
+            contract.ContractStatusTitle = txtContractStatus.Text;
         }
 
-        private void CapNhatTrangThaiPhong(Object.ObjRoom room, string roomId)
+        private void SetDataRoom(Object.ObjRoom room)
         {
-            room.RoomId = roomId;
-            room.RoomStatus = "Còn trống";
+            room.RoomId = txtRoomId.Text;
+            room.RoomStatus = "0";
+            room.RoomStatusTitle = "Phòng trống";
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -257,8 +268,7 @@ namespace QuanLyChungCu.View
                 }
                 else
                 {
-                    text = "Vui lòng nhập vào một số nếu tìm kiếm theo mã hợp đồng!";
-                    ThongBao(text);
+                    ThongBao("Vui lòng nhập vào một số nếu tìm kiếm theo mã hợp đồng!");
                 }
             }
             else
@@ -273,8 +283,7 @@ namespace QuanLyChungCu.View
                 }
                 else
                 {
-                    text = "Vui lòng nhập vào một số nếu tìm kiếm theo mã phòng!";
-                    ThongBao(text);
+                    ThongBao("Vui lòng nhập vào một số nếu tìm kiếm theo mã phòng!");
                 }
             }
         }
@@ -283,24 +292,20 @@ namespace QuanLyChungCu.View
         {
             for (int rows = 0; rows < dgvDSChiTietHopDong.Rows.Count - 1; rows++)
             {
+                SetDataContract(contract);
                 string time = dgvDSChiTietHopDong.Rows[rows].Cells["DateEnd"].Value.ToString();
                 if (time != null)
                 {
                     DateTime value = DateTime.Parse(time);
                     string contractId = dgvDSChiTietHopDong.Rows[rows].Cells["ContractId"].Value.ToString();
-                    string roomId = dgvDSChiTietHopDong.Rows[rows].Cells["RoomId"].Value.ToString();
                     if (calculateTime(value, DateTime.Today) > 0)
                     {
+                        contract.ContractStatus = "0";
+                        contract.ContractStatusTitle = "Hết hiệu lực";
                         MessageBox.Show("Hợp đồng " + contractId + " đã hết hạn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        CapNhatTrangThaiPhong(room, roomId);
-                        {
-                            switch (contractCtrl.CapNhatPhong(room))
-                            {
-                                case 1:
-                                    break;
-                            }
-                        }
-                        deleteContract(contractId, roomId);
+                        SetDataRoom(room);
+                        contractCtrl.CapNhatPhong(room);
+                        deleteContract(contractId);
                     }
                 }
             }
@@ -318,27 +323,26 @@ namespace QuanLyChungCu.View
             MessageBox.Show(text, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void mntNgayBatDau_DateSelected(object sender, DateRangeEventArgs e)
-        {
-            txtDateStart.Text = mntDateStart.SelectionStart.ToShortDateString();
-            mntDateStart.Visible = false;
-        }
-
-        private void mntNgayBatDau_MouseLeave(object sender, EventArgs e)
-        {
-            mntDateStart.Visible = false;
-        }
-
-        private void mntNgayKetThuc_DateSelected(object sender, DateRangeEventArgs e)
+        private void mntDateEnd_DateSelected(object sender, DateRangeEventArgs e)
         {
             txtDateEnd.Text = mntDateEnd.SelectionStart.ToShortDateString();
             mntDateEnd.Visible = false;
         }
 
-        private void mntNgayKetThuc_MouseLeave(object sender, EventArgs e)
+        private void mntDateStart_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            txtDateStart.Text = mntDateStart.SelectionStart.ToShortDateString();
+            mntDateStart.Visible = false;
+        }
+
+        private void mntDateEnd_MouseLeave(object sender, EventArgs e)
         {
             mntDateEnd.Visible = false;
         }
 
+        private void mntDateStart_MouseLeave(object sender, EventArgs e)
+        {
+            mntDateStart.Visible = false;
+        }
     }
 }

@@ -38,12 +38,7 @@
             this.btnTimKiem = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.txtTimKiem = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.dgvDSChiTietPhong = new System.Windows.Forms.DataGridView();
-            this.RoomId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoomArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoomFloor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoomStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grpThongTinTaiKhoan = new Guna.UI.WinForms.GunaGroupBox();
+            this.grpThongTinPhong = new Guna.UI.WinForms.GunaGroupBox();
             this.txtRoomArea = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnThemTK = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -62,11 +57,16 @@
             this.errRoomFloor = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorRoomStatus = new System.Windows.Forms.ErrorProvider(this.components);
             this.errRoomArea = new System.Windows.Forms.ErrorProvider(this.components);
+            this.RoomId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomArea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomFloor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomStatusTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.grp_TimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.optionCombobox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSChiTietPhong)).BeginInit();
-            this.grpThongTinTaiKhoan.SuspendLayout();
+            this.grpThongTinPhong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errRoomId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errCost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errRoomFloor)).BeginInit();
@@ -79,7 +79,6 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
             this.panel1.Controls.Add(this.lbl_QLTaiKhoan);
             this.panel1.Controls.Add(this.grp_TimKiem);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1064, 70);
@@ -133,7 +132,7 @@
             this.optionCombobox.StateCommon.ComboBox.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(51)))));
             this.optionCombobox.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.optionCombobox.StateCommon.ComboBox.Content.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.optionCombobox.TabIndex = 1;
+            this.optionCombobox.TabIndex = 10;
             // 
             // btnTimKiem
             // 
@@ -199,7 +198,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnTimKiem.StateTracking.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.btnTimKiem.StateTracking.Border.Width = 1;
-            this.btnTimKiem.TabIndex = 3;
+            this.btnTimKiem.TabIndex = 12;
             this.btnTimKiem.Values.Text = "Tìm kiếm";
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
@@ -222,7 +221,7 @@
             this.txtTimKiem.StateCommon.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(51)))));
             this.txtTimKiem.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimKiem.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.txtTimKiem.TabIndex = 2;
+            this.txtTimKiem.TabIndex = 11;
             this.txtTimKiem.WordWrap = false;
             // 
             // dgvDSChiTietPhong
@@ -243,7 +242,7 @@
             this.Cost,
             this.RoomArea,
             this.RoomFloor,
-            this.RoomStatus});
+            this.RoomStatusTitle});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -259,84 +258,40 @@
             this.dgvDSChiTietPhong.RowHeadersWidth = 51;
             this.dgvDSChiTietPhong.RowTemplate.Height = 36;
             this.dgvDSChiTietPhong.Size = new System.Drawing.Size(1010, 378);
-            this.dgvDSChiTietPhong.TabIndex = 31;
+            this.dgvDSChiTietPhong.TabIndex = 9;
             this.dgvDSChiTietPhong.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvDSChiTietPhong_MouseClick);
             // 
-            // RoomId
+            // grpThongTinPhong
             // 
-            this.RoomId.DataPropertyName = "RoomId";
-            this.RoomId.HeaderText = "Mã phòng";
-            this.RoomId.MinimumWidth = 6;
-            this.RoomId.Name = "RoomId";
-            this.RoomId.ReadOnly = true;
-            this.RoomId.Width = 120;
-            // 
-            // Cost
-            // 
-            this.Cost.DataPropertyName = "Cost";
-            this.Cost.HeaderText = "Giá phòng";
-            this.Cost.MinimumWidth = 6;
-            this.Cost.Name = "Cost";
-            this.Cost.ReadOnly = true;
-            this.Cost.Width = 130;
-            // 
-            // RoomArea
-            // 
-            this.RoomArea.DataPropertyName = "RoomArea";
-            this.RoomArea.HeaderText = "Diện tích";
-            this.RoomArea.Name = "RoomArea";
-            this.RoomArea.ReadOnly = true;
-            this.RoomArea.Width = 120;
-            // 
-            // RoomFloor
-            // 
-            this.RoomFloor.DataPropertyName = "RoomFloor";
-            this.RoomFloor.HeaderText = "Tầng";
-            this.RoomFloor.MinimumWidth = 6;
-            this.RoomFloor.Name = "RoomFloor";
-            this.RoomFloor.ReadOnly = true;
-            this.RoomFloor.Width = 130;
-            // 
-            // RoomStatus
-            // 
-            this.RoomStatus.DataPropertyName = "RoomStatus";
-            this.RoomStatus.HeaderText = "Trạng thái";
-            this.RoomStatus.MinimumWidth = 6;
-            this.RoomStatus.Name = "RoomStatus";
-            this.RoomStatus.ReadOnly = true;
-            this.RoomStatus.Width = 140;
-            // 
-            // grpThongTinTaiKhoan
-            // 
-            this.grpThongTinTaiKhoan.BackColor = System.Drawing.Color.Transparent;
-            this.grpThongTinTaiKhoan.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
-            this.grpThongTinTaiKhoan.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
-            this.grpThongTinTaiKhoan.Controls.Add(this.txtRoomArea);
-            this.grpThongTinTaiKhoan.Controls.Add(this.label2);
-            this.grpThongTinTaiKhoan.Controls.Add(this.btnThemTK);
-            this.grpThongTinTaiKhoan.Controls.Add(this.btnCapNhat);
-            this.grpThongTinTaiKhoan.Controls.Add(this.btnLamMoi);
-            this.grpThongTinTaiKhoan.Controls.Add(this.txtRoomFloor);
-            this.grpThongTinTaiKhoan.Controls.Add(this.txtCost);
-            this.grpThongTinTaiKhoan.Controls.Add(this.txtRoomStatus);
-            this.grpThongTinTaiKhoan.Controls.Add(this.txtRoomId);
-            this.grpThongTinTaiKhoan.Controls.Add(this.label1);
-            this.grpThongTinTaiKhoan.Controls.Add(this.lblUsername);
-            this.grpThongTinTaiKhoan.Controls.Add(this.lblMaTK);
-            this.grpThongTinTaiKhoan.Controls.Add(this.label4);
-            this.grpThongTinTaiKhoan.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpThongTinTaiKhoan.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
-            this.grpThongTinTaiKhoan.Location = new System.Drawing.Point(27, 96);
-            this.grpThongTinTaiKhoan.Name = "grpThongTinTaiKhoan";
-            this.grpThongTinTaiKhoan.Radius = 6;
-            this.grpThongTinTaiKhoan.Size = new System.Drawing.Size(1010, 202);
-            this.grpThongTinTaiKhoan.TabIndex = 30;
-            this.grpThongTinTaiKhoan.TextLocation = new System.Drawing.Point(10, 8);
+            this.grpThongTinPhong.BackColor = System.Drawing.Color.Transparent;
+            this.grpThongTinPhong.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.grpThongTinPhong.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.grpThongTinPhong.Controls.Add(this.txtRoomArea);
+            this.grpThongTinPhong.Controls.Add(this.label2);
+            this.grpThongTinPhong.Controls.Add(this.btnThemTK);
+            this.grpThongTinPhong.Controls.Add(this.btnCapNhat);
+            this.grpThongTinPhong.Controls.Add(this.btnLamMoi);
+            this.grpThongTinPhong.Controls.Add(this.txtRoomFloor);
+            this.grpThongTinPhong.Controls.Add(this.txtCost);
+            this.grpThongTinPhong.Controls.Add(this.txtRoomStatus);
+            this.grpThongTinPhong.Controls.Add(this.txtRoomId);
+            this.grpThongTinPhong.Controls.Add(this.label1);
+            this.grpThongTinPhong.Controls.Add(this.lblUsername);
+            this.grpThongTinPhong.Controls.Add(this.lblMaTK);
+            this.grpThongTinPhong.Controls.Add(this.label4);
+            this.grpThongTinPhong.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpThongTinPhong.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.grpThongTinPhong.Location = new System.Drawing.Point(27, 96);
+            this.grpThongTinPhong.Name = "grpThongTinPhong";
+            this.grpThongTinPhong.Radius = 6;
+            this.grpThongTinPhong.Size = new System.Drawing.Size(1010, 202);
+            this.grpThongTinPhong.TabIndex = 30;
+            this.grpThongTinPhong.TextLocation = new System.Drawing.Point(10, 8);
             // 
             // txtRoomArea
             // 
             this.txtRoomArea.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtRoomArea.Location = new System.Drawing.Point(108, 102);
+            this.txtRoomArea.Location = new System.Drawing.Point(91, 102);
             this.txtRoomArea.Margin = new System.Windows.Forms.Padding(2);
             this.txtRoomArea.Name = "txtRoomArea";
             this.txtRoomArea.Size = new System.Drawing.Size(166, 31);
@@ -353,7 +308,7 @@
             this.txtRoomArea.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRoomArea.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.txtRoomArea.StateDisabled.Back.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.txtRoomArea.TabIndex = 42;
+            this.txtRoomArea.TabIndex = 3;
             this.txtRoomArea.WordWrap = false;
             // 
             // label2
@@ -370,7 +325,7 @@
             // btnThemTK
             // 
             this.btnThemTK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThemTK.Location = new System.Drawing.Point(310, 146);
+            this.btnThemTK.Location = new System.Drawing.Point(318, 146);
             this.btnThemTK.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemTK.Name = "btnThemTK";
             this.btnThemTK.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
@@ -431,14 +386,14 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnThemTK.StateTracking.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.btnThemTK.StateTracking.Border.Width = 1;
-            this.btnThemTK.TabIndex = 41;
-            this.btnThemTK.Values.Text = "Thêm";
+            this.btnThemTK.TabIndex = 8;
+            this.btnThemTK.Values.Text = "Thêm phòng";
             this.btnThemTK.Click += new System.EventHandler(this.btnThemTK_Click);
             // 
             // btnCapNhat
             // 
             this.btnCapNhat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCapNhat.Location = new System.Drawing.Point(165, 146);
+            this.btnCapNhat.Location = new System.Drawing.Point(169, 146);
             this.btnCapNhat.Margin = new System.Windows.Forms.Padding(2);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
@@ -492,7 +447,7 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnCapNhat.StateTracking.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.btnCapNhat.StateTracking.Border.Width = 1;
-            this.btnCapNhat.TabIndex = 39;
+            this.btnCapNhat.TabIndex = 7;
             this.btnCapNhat.Values.Text = "Cập nhật";
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
@@ -553,14 +508,14 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnLamMoi.StateTracking.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.btnLamMoi.StateTracking.Border.Width = 1;
-            this.btnLamMoi.TabIndex = 38;
+            this.btnLamMoi.TabIndex = 6;
             this.btnLamMoi.Values.Text = "Làm mới";
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // txtRoomFloor
             // 
             this.txtRoomFloor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtRoomFloor.Location = new System.Drawing.Point(389, 22);
+            this.txtRoomFloor.Location = new System.Drawing.Point(381, 22);
             this.txtRoomFloor.Margin = new System.Windows.Forms.Padding(2);
             this.txtRoomFloor.Name = "txtRoomFloor";
             this.txtRoomFloor.Size = new System.Drawing.Size(166, 31);
@@ -577,13 +532,13 @@
             this.txtRoomFloor.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRoomFloor.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.txtRoomFloor.StateDisabled.Back.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.txtRoomFloor.TabIndex = 6;
+            this.txtRoomFloor.TabIndex = 4;
             this.txtRoomFloor.WordWrap = false;
             // 
             // txtCost
             // 
             this.txtCost.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtCost.Location = new System.Drawing.Point(108, 62);
+            this.txtCost.Location = new System.Drawing.Point(91, 62);
             this.txtCost.Margin = new System.Windows.Forms.Padding(2);
             this.txtCost.Name = "txtCost";
             this.txtCost.Size = new System.Drawing.Size(166, 31);
@@ -600,13 +555,13 @@
             this.txtCost.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCost.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.txtCost.StateDisabled.Back.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.txtCost.TabIndex = 5;
+            this.txtCost.TabIndex = 2;
             this.txtCost.WordWrap = false;
             // 
             // txtRoomStatus
             // 
             this.txtRoomStatus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtRoomStatus.Location = new System.Drawing.Point(389, 62);
+            this.txtRoomStatus.Location = new System.Drawing.Point(381, 62);
             this.txtRoomStatus.Margin = new System.Windows.Forms.Padding(2);
             this.txtRoomStatus.Name = "txtRoomStatus";
             this.txtRoomStatus.Size = new System.Drawing.Size(166, 31);
@@ -623,13 +578,13 @@
             this.txtRoomStatus.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRoomStatus.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.txtRoomStatus.StateDisabled.Back.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.txtRoomStatus.TabIndex = 10;
+            this.txtRoomStatus.TabIndex = 5;
             this.txtRoomStatus.WordWrap = false;
             // 
             // txtRoomId
             // 
             this.txtRoomId.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtRoomId.Location = new System.Drawing.Point(108, 22);
+            this.txtRoomId.Location = new System.Drawing.Point(91, 22);
             this.txtRoomId.Margin = new System.Windows.Forms.Padding(2);
             this.txtRoomId.Name = "txtRoomId";
             this.txtRoomId.Size = new System.Drawing.Size(166, 31);
@@ -646,7 +601,7 @@
             this.txtRoomId.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRoomId.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.txtRoomId.StateDisabled.Back.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.txtRoomId.TabIndex = 4;
+            this.txtRoomId.TabIndex = 1;
             this.txtRoomId.WordWrap = false;
             // 
             // label1
@@ -676,7 +631,7 @@
             this.lblMaTK.AutoSize = true;
             this.lblMaTK.Font = new System.Drawing.Font("Roboto", 9.75F);
             this.lblMaTK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(51)))));
-            this.lblMaTK.Location = new System.Drawing.Point(310, 30);
+            this.lblMaTK.Location = new System.Drawing.Point(312, 30);
             this.lblMaTK.Name = "lblMaTK";
             this.lblMaTK.Size = new System.Drawing.Size(38, 15);
             this.lblMaTK.TabIndex = 16;
@@ -687,7 +642,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Roboto", 9.75F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(51)))));
-            this.label4.Location = new System.Drawing.Point(310, 70);
+            this.label4.Location = new System.Drawing.Point(312, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 15);
             this.label4.TabIndex = 32;
@@ -713,13 +668,57 @@
             // 
             this.errRoomArea.ContainerControl = this;
             // 
+            // RoomId
+            // 
+            this.RoomId.DataPropertyName = "RoomId";
+            this.RoomId.HeaderText = "Mã phòng";
+            this.RoomId.MinimumWidth = 6;
+            this.RoomId.Name = "RoomId";
+            this.RoomId.ReadOnly = true;
+            this.RoomId.Width = 120;
+            // 
+            // Cost
+            // 
+            this.Cost.DataPropertyName = "Cost";
+            this.Cost.HeaderText = "Giá phòng (VND)";
+            this.Cost.MinimumWidth = 6;
+            this.Cost.Name = "Cost";
+            this.Cost.ReadOnly = true;
+            this.Cost.Width = 160;
+            // 
+            // RoomArea
+            // 
+            this.RoomArea.DataPropertyName = "RoomArea";
+            this.RoomArea.HeaderText = "Diện tích (m²)";
+            this.RoomArea.Name = "RoomArea";
+            this.RoomArea.ReadOnly = true;
+            this.RoomArea.Width = 130;
+            // 
+            // RoomFloor
+            // 
+            this.RoomFloor.DataPropertyName = "RoomFloor";
+            this.RoomFloor.HeaderText = "Tầng";
+            this.RoomFloor.MinimumWidth = 6;
+            this.RoomFloor.Name = "RoomFloor";
+            this.RoomFloor.ReadOnly = true;
+            this.RoomFloor.Width = 130;
+            // 
+            // RoomStatusTitle
+            // 
+            this.RoomStatusTitle.DataPropertyName = "RoomStatusTitle";
+            this.RoomStatusTitle.HeaderText = "Trạng thái";
+            this.RoomStatusTitle.MinimumWidth = 6;
+            this.RoomStatusTitle.Name = "RoomStatusTitle";
+            this.RoomStatusTitle.ReadOnly = true;
+            this.RoomStatusTitle.Width = 170;
+            // 
             // QuanLyPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 729);
             this.Controls.Add(this.dgvDSChiTietPhong);
-            this.Controls.Add(this.grpThongTinTaiKhoan);
+            this.Controls.Add(this.grpThongTinPhong);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -732,8 +731,8 @@
             this.grp_TimKiem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.optionCombobox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSChiTietPhong)).EndInit();
-            this.grpThongTinTaiKhoan.ResumeLayout(false);
-            this.grpThongTinTaiKhoan.PerformLayout();
+            this.grpThongTinPhong.ResumeLayout(false);
+            this.grpThongTinPhong.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errRoomId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errCost)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errRoomFloor)).EndInit();
@@ -752,7 +751,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnTimKiem;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtTimKiem;
         private System.Windows.Forms.DataGridView dgvDSChiTietPhong;
-        private Guna.UI.WinForms.GunaGroupBox grpThongTinTaiKhoan;
+        private Guna.UI.WinForms.GunaGroupBox grpThongTinPhong;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnThemTK;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnCapNhat;
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnLamMoi;
@@ -770,11 +769,11 @@
         private System.Windows.Forms.ErrorProvider errorRoomStatus;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox txtRoomArea;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ErrorProvider errRoomArea;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoomId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoomArea;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoomFloor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RoomStatus;
-        private System.Windows.Forms.ErrorProvider errRoomArea;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoomStatusTitle;
     }
 }

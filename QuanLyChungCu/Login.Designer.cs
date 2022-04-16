@@ -34,16 +34,20 @@
             this.rdbUser = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.username = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.password = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.buttonLogin = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelMain = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panelMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // rdbAdmin
@@ -89,10 +93,19 @@
             // kryptonPalette1
             // 
             this.kryptonPalette1.ButtonSpecs.FormClose.Image = global::QuanLyChungCu.Properties.Resources.mc_red;
+            this.kryptonPalette1.ButtonSpecs.FormClose.ImageStates.ImageNormal = global::QuanLyChungCu.Properties.Resources.mc_red;
             this.kryptonPalette1.ButtonSpecs.FormClose.ImageStates.ImagePressed = global::QuanLyChungCu.Properties.Resources.mc_red;
             this.kryptonPalette1.ButtonSpecs.FormClose.ImageStates.ImageTracking = global::QuanLyChungCu.Properties.Resources.mc_red;
             this.kryptonPalette1.ButtonSpecs.FormMax.Image = global::QuanLyChungCu.Properties.Resources.mc_yellw;
+            this.kryptonPalette1.ButtonSpecs.FormMax.ImageStates.ImageDisabled = global::QuanLyChungCu.Properties.Resources.mc_yellw;
+            this.kryptonPalette1.ButtonSpecs.FormMax.ImageStates.ImageNormal = global::QuanLyChungCu.Properties.Resources.mc_yellw;
+            this.kryptonPalette1.ButtonSpecs.FormMax.ImageStates.ImagePressed = global::QuanLyChungCu.Properties.Resources.mc_yellw;
+            this.kryptonPalette1.ButtonSpecs.FormMax.ImageStates.ImageTracking = global::QuanLyChungCu.Properties.Resources.mc_yellw;
             this.kryptonPalette1.ButtonSpecs.FormMin.Image = global::QuanLyChungCu.Properties.Resources.mc_green;
+            this.kryptonPalette1.ButtonSpecs.FormRestore.Image = global::QuanLyChungCu.Properties.Resources.mc_yellw;
+            this.kryptonPalette1.ButtonSpecs.FormRestore.ImageStates.ImageDisabled = global::QuanLyChungCu.Properties.Resources.mc_yellw;
+            this.kryptonPalette1.ButtonSpecs.FormRestore.ImageStates.ImagePressed = global::QuanLyChungCu.Properties.Resources.mc_yellw;
+            this.kryptonPalette1.ButtonSpecs.FormRestore.ImageStates.ImageTracking = global::QuanLyChungCu.Properties.Resources.mc_yellw;
             this.kryptonPalette1.ButtonStyles.ButtonForm.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.kryptonPalette1.ButtonStyles.ButtonForm.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.kryptonPalette1.ButtonStyles.ButtonForm.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -125,22 +138,10 @@
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.ButtonEdgeInset = 10;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::QuanLyChungCu.Properties.Resources.banner;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(578, 729);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 24;
-            this.pictureBox1.TabStop = false;
-            // 
             // username
             // 
             this.username.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.username.Location = new System.Drawing.Point(0, 129);
+            this.username.Location = new System.Drawing.Point(88, 129);
             this.username.Margin = new System.Windows.Forms.Padding(2);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(260, 34);
@@ -157,17 +158,15 @@
             this.username.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.username.TabIndex = 24;
-            this.username.Text = "Tài khoản";
             this.username.WordWrap = false;
-            this.username.Enter += new System.EventHandler(this.username_Enter);
-            this.username.MouseClick += new System.Windows.Forms.MouseEventHandler(this.username_MouseClick);
             // 
             // password
             // 
             this.password.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.password.Location = new System.Drawing.Point(0, 180);
+            this.password.Location = new System.Drawing.Point(88, 180);
             this.password.Margin = new System.Windows.Forms.Padding(2);
             this.password.Name = "password";
+            this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(260, 34);
             this.password.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.password.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -182,10 +181,7 @@
             this.password.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.password.TabIndex = 25;
-            this.password.Text = "Mật khẩu";
             this.password.WordWrap = false;
-            this.password.Enter += new System.EventHandler(this.password_Enter);
-            this.password.MouseClick += new System.Windows.Forms.MouseEventHandler(this.password_MouseClick);
             // 
             // buttonLogin
             // 
@@ -262,6 +258,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.buttonLogin);
             this.panel1.Controls.Add(this.rdbAdmin);
@@ -274,14 +272,54 @@
             this.panel1.Size = new System.Drawing.Size(534, 328);
             this.panel1.TabIndex = 28;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(0, 188);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 19);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "Mật khẩu:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(0, 137);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 19);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Tài khoản:";
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(578, 0);
+            this.panel2.Location = new System.Drawing.Point(585, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(686, 729);
             this.panel2.TabIndex = 29;
+            // 
+            // panelMain
+            // 
+            this.panelMain.Controls.Add(this.panel2);
+            this.panelMain.Controls.Add(this.pictureBox1);
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(0, 0);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(1264, 729);
+            this.panelMain.TabIndex = 30;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QuanLyChungCu.Properties.Resources.banner;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(578, 729);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
             // 
             // Login
             // 
@@ -289,21 +327,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1264, 729);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panelMain);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Login";
             this.Palette = this.kryptonPalette1;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.Login_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Text = "Homies";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panelMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -320,5 +358,8 @@
         private System.Windows.Forms.RadioButton rdbAdmin;
         private System.Windows.Forms.RadioButton rdbUser;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }

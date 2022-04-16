@@ -26,6 +26,10 @@ namespace QuanLyChungCu
         private void getMainControl()
         {
             MainControl mainMenu = new MainControl();
+            mainMenu.TopLevel = false;
+            panelMain.Controls.Add(mainMenu);
+            mainMenu.Dock = DockStyle.Fill;
+            mainMenu.BringToFront();
             mainMenu.Show();
         }
 
@@ -50,16 +54,6 @@ namespace QuanLyChungCu
                 return "NULL";
             }
 
-        }
-
-        private void username_MouseClick(object sender, MouseEventArgs e)
-        {
-            username.Clear();
-        }
-
-        private void password_MouseClick(object sender, MouseEventArgs e)
-        {
-            password.Clear();
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -104,7 +98,7 @@ namespace QuanLyChungCu
                 }
                 catch (Exception ce)
                 {
-                    MessageBox.Show("Sai tài khoản hoặc mật khẩu!\nKiểm tra lại quyền đăng nhập!\n" + ce.Message);
+                    MessageBox.Show("Sai tài khoản hoặc mật khẩu!\nKiểm tra lại quyền đăng nhập!\n");
                 }
 
             }
@@ -128,22 +122,6 @@ namespace QuanLyChungCu
                     MessageBox.Show(ce.Message);
                 }
             }
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-            this.ActiveControl = label1;
-        }
-
-        private void username_Enter(object sender, EventArgs e)
-        {
-            username.Clear();
-        }
-
-        private void password_Enter(object sender, EventArgs e)
-        {
-            password.Clear();
-            password.PasswordChar = '*';
         }
     }
 }

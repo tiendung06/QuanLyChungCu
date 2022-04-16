@@ -28,28 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panelformularioss = new System.Windows.Forms.Panel();
-            this.btnQLTaiKhoan = new FontAwesome.Sharp.IconButton();
-            this.btnQLNguoiDung = new FontAwesome.Sharp.IconButton();
-            this.btnQLNhomNguoiDung = new FontAwesome.Sharp.IconButton();
-            this.btnQLThietBi = new FontAwesome.Sharp.IconButton();
-            this.btnQLLoaiTB = new FontAwesome.Sharp.IconButton();
-            this.btnThongKeTB = new FontAwesome.Sharp.IconButton();
-            this.btnQLMuonTra = new FontAwesome.Sharp.IconButton();
-            this.btnQLThanhLy = new FontAwesome.Sharp.IconButton();
             this.lblNameUser = new System.Windows.Forms.Label();
-            this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.panelMenuCustomer = new System.Windows.Forms.Panel();
             this.btnDangXuat = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnQLThuTien = new FontAwesome.Sharp.IconButton();
             this.btnQLHopDong = new FontAwesome.Sharp.IconButton();
             this.btnQLPhong = new FontAwesome.Sharp.IconButton();
             this.btnQLKhachO = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnHome = new FontAwesome.Sharp.IconButton();
             this.panelformularios = new System.Windows.Forms.Panel();
-            this.panelformularioss.SuspendLayout();
+            this.btnBaoCaoThongKe = new FontAwesome.Sharp.IconButton();
             this.panelMenuCustomer.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -59,204 +50,12 @@
             // panelformularioss
             // 
             this.panelformularioss.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
-            this.panelformularioss.Controls.Add(this.btnQLTaiKhoan);
-            this.panelformularioss.Controls.Add(this.btnQLNguoiDung);
-            this.panelformularioss.Controls.Add(this.btnQLNhomNguoiDung);
-            this.panelformularioss.Controls.Add(this.btnQLThietBi);
-            this.panelformularioss.Controls.Add(this.btnQLLoaiTB);
-            this.panelformularioss.Controls.Add(this.btnThongKeTB);
-            this.panelformularioss.Controls.Add(this.btnQLMuonTra);
-            this.panelformularioss.Controls.Add(this.btnQLThanhLy);
             this.panelformularioss.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelformularioss.Location = new System.Drawing.Point(0, 0);
             this.panelformularioss.Margin = new System.Windows.Forms.Padding(2);
             this.panelformularioss.Name = "panelformularioss";
             this.panelformularioss.Size = new System.Drawing.Size(1064, 729);
             this.panelformularioss.TabIndex = 2;
-            // 
-            // btnQLTaiKhoan
-            // 
-            this.btnQLTaiKhoan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQLTaiKhoan.FlatAppearance.BorderSize = 0;
-            this.btnQLTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLTaiKhoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(105)))));
-            this.btnQLTaiKhoan.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.btnQLTaiKhoan.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(105)))));
-            this.btnQLTaiKhoan.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnQLTaiKhoan.IconSize = 30;
-            this.btnQLTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLTaiKhoan.Location = new System.Drawing.Point(120, 614);
-            this.btnQLTaiKhoan.Margin = new System.Windows.Forms.Padding(2);
-            this.btnQLTaiKhoan.Name = "btnQLTaiKhoan";
-            this.btnQLTaiKhoan.Padding = new System.Windows.Forms.Padding(8, 4, 8, 4);
-            this.btnQLTaiKhoan.Size = new System.Drawing.Size(200, 50);
-            this.btnQLTaiKhoan.TabIndex = 2;
-            this.btnQLTaiKhoan.Text = "Quản lý tài khoản";
-            this.btnQLTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLTaiKhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQLTaiKhoan.UseVisualStyleBackColor = true;
-            this.btnQLTaiKhoan.Click += new System.EventHandler(this.btnQLTaiKhoan_Click);
-            // 
-            // btnQLNguoiDung
-            // 
-            this.btnQLNguoiDung.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQLNguoiDung.FlatAppearance.BorderSize = 0;
-            this.btnQLNguoiDung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLNguoiDung.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(105)))));
-            this.btnQLNguoiDung.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.btnQLNguoiDung.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(105)))));
-            this.btnQLNguoiDung.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnQLNguoiDung.IconSize = 30;
-            this.btnQLNguoiDung.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLNguoiDung.Location = new System.Drawing.Point(324, 614);
-            this.btnQLNguoiDung.Margin = new System.Windows.Forms.Padding(2);
-            this.btnQLNguoiDung.Name = "btnQLNguoiDung";
-            this.btnQLNguoiDung.Padding = new System.Windows.Forms.Padding(8, 4, 8, 4);
-            this.btnQLNguoiDung.Size = new System.Drawing.Size(200, 50);
-            this.btnQLNguoiDung.TabIndex = 3;
-            this.btnQLNguoiDung.Text = "Quản lý người dùng";
-            this.btnQLNguoiDung.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLNguoiDung.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQLNguoiDung.UseVisualStyleBackColor = true;
-            this.btnQLNguoiDung.Click += new System.EventHandler(this.btnQLNguoiDung_Click);
-            // 
-            // btnQLNhomNguoiDung
-            // 
-            this.btnQLNhomNguoiDung.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQLNhomNguoiDung.FlatAppearance.BorderSize = 0;
-            this.btnQLNhomNguoiDung.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLNhomNguoiDung.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(105)))));
-            this.btnQLNhomNguoiDung.IconChar = FontAwesome.Sharp.IconChar.UserFriends;
-            this.btnQLNhomNguoiDung.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(105)))));
-            this.btnQLNhomNguoiDung.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnQLNhomNguoiDung.IconSize = 30;
-            this.btnQLNhomNguoiDung.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLNhomNguoiDung.Location = new System.Drawing.Point(120, 560);
-            this.btnQLNhomNguoiDung.Margin = new System.Windows.Forms.Padding(2);
-            this.btnQLNhomNguoiDung.Name = "btnQLNhomNguoiDung";
-            this.btnQLNhomNguoiDung.Padding = new System.Windows.Forms.Padding(8, 4, 8, 4);
-            this.btnQLNhomNguoiDung.Size = new System.Drawing.Size(200, 50);
-            this.btnQLNhomNguoiDung.TabIndex = 4;
-            this.btnQLNhomNguoiDung.Text = "Nhóm người dùng";
-            this.btnQLNhomNguoiDung.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLNhomNguoiDung.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQLNhomNguoiDung.UseVisualStyleBackColor = true;
-            this.btnQLNhomNguoiDung.Click += new System.EventHandler(this.btnQLNhomNguoiDung_Click);
-            // 
-            // btnQLThietBi
-            // 
-            this.btnQLThietBi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQLThietBi.FlatAppearance.BorderSize = 0;
-            this.btnQLThietBi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLThietBi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(105)))));
-            this.btnQLThietBi.IconChar = FontAwesome.Sharp.IconChar.Wrench;
-            this.btnQLThietBi.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(105)))));
-            this.btnQLThietBi.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnQLThietBi.IconSize = 30;
-            this.btnQLThietBi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLThietBi.Location = new System.Drawing.Point(340, 560);
-            this.btnQLThietBi.Margin = new System.Windows.Forms.Padding(2);
-            this.btnQLThietBi.Name = "btnQLThietBi";
-            this.btnQLThietBi.Padding = new System.Windows.Forms.Padding(8, 4, 8, 4);
-            this.btnQLThietBi.Size = new System.Drawing.Size(200, 50);
-            this.btnQLThietBi.TabIndex = 5;
-            this.btnQLThietBi.Text = "Quản lý thiết bị";
-            this.btnQLThietBi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLThietBi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQLThietBi.UseVisualStyleBackColor = true;
-            this.btnQLThietBi.Click += new System.EventHandler(this.btnQLThietBi_Click);
-            // 
-            // btnQLLoaiTB
-            // 
-            this.btnQLLoaiTB.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQLLoaiTB.FlatAppearance.BorderSize = 0;
-            this.btnQLLoaiTB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLLoaiTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(105)))));
-            this.btnQLLoaiTB.IconChar = FontAwesome.Sharp.IconChar.Tools;
-            this.btnQLLoaiTB.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(105)))));
-            this.btnQLLoaiTB.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnQLLoaiTB.IconSize = 30;
-            this.btnQLLoaiTB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLLoaiTB.Location = new System.Drawing.Point(544, 560);
-            this.btnQLLoaiTB.Margin = new System.Windows.Forms.Padding(2);
-            this.btnQLLoaiTB.Name = "btnQLLoaiTB";
-            this.btnQLLoaiTB.Padding = new System.Windows.Forms.Padding(8, 4, 8, 4);
-            this.btnQLLoaiTB.Size = new System.Drawing.Size(200, 50);
-            this.btnQLLoaiTB.TabIndex = 6;
-            this.btnQLLoaiTB.Text = "Quản lý loại thiết bị";
-            this.btnQLLoaiTB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLLoaiTB.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQLLoaiTB.UseVisualStyleBackColor = true;
-            this.btnQLLoaiTB.Click += new System.EventHandler(this.btnQLLoaiTB_Click);
-            // 
-            // btnThongKeTB
-            // 
-            this.btnThongKeTB.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThongKeTB.FlatAppearance.BorderSize = 0;
-            this.btnThongKeTB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongKeTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(105)))));
-            this.btnThongKeTB.IconChar = FontAwesome.Sharp.IconChar.ThList;
-            this.btnThongKeTB.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(105)))));
-            this.btnThongKeTB.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThongKeTB.IconSize = 30;
-            this.btnThongKeTB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongKeTB.Location = new System.Drawing.Point(719, 614);
-            this.btnThongKeTB.Margin = new System.Windows.Forms.Padding(2);
-            this.btnThongKeTB.Name = "btnThongKeTB";
-            this.btnThongKeTB.Padding = new System.Windows.Forms.Padding(8, 4, 8, 4);
-            this.btnThongKeTB.Size = new System.Drawing.Size(200, 50);
-            this.btnThongKeTB.TabIndex = 9;
-            this.btnThongKeTB.Text = "Thống kê";
-            this.btnThongKeTB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongKeTB.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThongKeTB.UseVisualStyleBackColor = true;
-            this.btnThongKeTB.Click += new System.EventHandler(this.btnThongKeTB_Click);
-            // 
-            // btnQLMuonTra
-            // 
-            this.btnQLMuonTra.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQLMuonTra.FlatAppearance.BorderSize = 0;
-            this.btnQLMuonTra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLMuonTra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(105)))));
-            this.btnQLMuonTra.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.btnQLMuonTra.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(105)))));
-            this.btnQLMuonTra.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnQLMuonTra.IconSize = 30;
-            this.btnQLMuonTra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLMuonTra.Location = new System.Drawing.Point(544, 614);
-            this.btnQLMuonTra.Margin = new System.Windows.Forms.Padding(2);
-            this.btnQLMuonTra.Name = "btnQLMuonTra";
-            this.btnQLMuonTra.Padding = new System.Windows.Forms.Padding(8, 4, 8, 4);
-            this.btnQLMuonTra.Size = new System.Drawing.Size(200, 50);
-            this.btnQLMuonTra.TabIndex = 7;
-            this.btnQLMuonTra.Text = "Mượn/Trả thiết bị";
-            this.btnQLMuonTra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLMuonTra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQLMuonTra.UseVisualStyleBackColor = true;
-            this.btnQLMuonTra.Click += new System.EventHandler(this.btnQLMuonTra_Click);
-            // 
-            // btnQLThanhLy
-            // 
-            this.btnQLThanhLy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQLThanhLy.FlatAppearance.BorderSize = 0;
-            this.btnQLThanhLy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQLThanhLy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(105)))));
-            this.btnQLThanhLy.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
-            this.btnQLThanhLy.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(105)))));
-            this.btnQLThanhLy.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnQLThanhLy.IconSize = 30;
-            this.btnQLThanhLy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLThanhLy.Location = new System.Drawing.Point(719, 560);
-            this.btnQLThanhLy.Margin = new System.Windows.Forms.Padding(2);
-            this.btnQLThanhLy.Name = "btnQLThanhLy";
-            this.btnQLThanhLy.Padding = new System.Windows.Forms.Padding(8, 4, 8, 4);
-            this.btnQLThanhLy.Size = new System.Drawing.Size(200, 50);
-            this.btnQLThanhLy.TabIndex = 8;
-            this.btnQLThanhLy.Text = "Thanh lý thiết bị";
-            this.btnQLThanhLy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLThanhLy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQLThanhLy.UseVisualStyleBackColor = true;
-            this.btnQLThanhLy.Click += new System.EventHandler(this.btnQLThanhLy_Click);
             // 
             // lblNameUser
             // 
@@ -269,47 +68,6 @@
             this.lblNameUser.Size = new System.Drawing.Size(43, 19);
             this.lblNameUser.TabIndex = 17;
             this.lblNameUser.Text = "User";
-            // 
-            // kryptonPalette1
-            // 
-            this.kryptonPalette1.ButtonSpecs.FormClose.Image = global::QuanLyChungCu.Properties.Resources.mc_red;
-            this.kryptonPalette1.ButtonSpecs.FormClose.ImageStates.ImagePressed = global::QuanLyChungCu.Properties.Resources.mc_red;
-            this.kryptonPalette1.ButtonSpecs.FormClose.ImageStates.ImageTracking = global::QuanLyChungCu.Properties.Resources.mc_red;
-            this.kryptonPalette1.ButtonSpecs.FormMax.Image = global::QuanLyChungCu.Properties.Resources.mc_yellw;
-            this.kryptonPalette1.ButtonSpecs.FormMax.ImageStates.ImagePressed = global::QuanLyChungCu.Properties.Resources.mc_yellw;
-            this.kryptonPalette1.ButtonSpecs.FormMax.ImageStates.ImageTracking = global::QuanLyChungCu.Properties.Resources.mc_yellw;
-            this.kryptonPalette1.ButtonSpecs.FormMin.Image = global::QuanLyChungCu.Properties.Resources.mc_green;
-            this.kryptonPalette1.ButtonSpecs.FormMin.ImageStates.ImagePressed = global::QuanLyChungCu.Properties.Resources.mc_green;
-            this.kryptonPalette1.ButtonSpecs.FormMin.ImageStates.ImageTracking = global::QuanLyChungCu.Properties.Resources.mc_green;
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StateNormal.Border.Width = 0;
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StatePressed.Border.Width = 0;
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StateTracking.Border.Width = 0;
-            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.None;
-            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Rounding = 12;
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.ButtonEdgeInset = 10;
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
             // 
             // panelMenuCustomer
             // 
@@ -349,16 +107,41 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnBaoCaoThongKe);
+            this.panel1.Controls.Add(this.btnQLThuTien);
             this.panel1.Controls.Add(this.btnQLHopDong);
             this.panel1.Controls.Add(this.btnQLPhong);
             this.panel1.Controls.Add(this.btnQLKhachO);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnHome);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 600);
+            this.panel1.Size = new System.Drawing.Size(200, 729);
             this.panel1.TabIndex = 19;
+            // 
+            // btnQLThuTien
+            // 
+            this.btnQLThuTien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQLThuTien.FlatAppearance.BorderSize = 0;
+            this.btnQLThuTien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQLThuTien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(105)))));
+            this.btnQLThuTien.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
+            this.btnQLThuTien.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(105)))));
+            this.btnQLThuTien.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnQLThuTien.IconSize = 30;
+            this.btnQLThuTien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQLThuTien.Location = new System.Drawing.Point(0, 297);
+            this.btnQLThuTien.Margin = new System.Windows.Forms.Padding(2);
+            this.btnQLThuTien.Name = "btnQLThuTien";
+            this.btnQLThuTien.Padding = new System.Windows.Forms.Padding(8, 4, 8, 4);
+            this.btnQLThuTien.Size = new System.Drawing.Size(200, 50);
+            this.btnQLThuTien.TabIndex = 20;
+            this.btnQLThuTien.Text = "Quản lý thu tiền";
+            this.btnQLThuTien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQLThuTien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnQLThuTien.UseVisualStyleBackColor = true;
+            this.btnQLThuTien.Click += new System.EventHandler(this.btnQuanLyThuTien_Click);
             // 
             // btnQLHopDong
             // 
@@ -424,7 +207,7 @@
             this.btnQLKhachO.Padding = new System.Windows.Forms.Padding(8, 4, 8, 4);
             this.btnQLKhachO.Size = new System.Drawing.Size(200, 50);
             this.btnQLKhachO.TabIndex = 3;
-            this.btnQLKhachO.Text = "Quản lý khách ở";
+            this.btnQLKhachO.Text = "Quản lý người thuê";
             this.btnQLKhachO.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQLKhachO.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQLKhachO.UseVisualStyleBackColor = true;
@@ -472,6 +255,29 @@
             this.panelformularios.Size = new System.Drawing.Size(1064, 729);
             this.panelformularios.TabIndex = 3;
             // 
+            // btnBaoCaoThongKe
+            // 
+            this.btnBaoCaoThongKe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBaoCaoThongKe.FlatAppearance.BorderSize = 0;
+            this.btnBaoCaoThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBaoCaoThongKe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(105)))));
+            this.btnBaoCaoThongKe.IconChar = FontAwesome.Sharp.IconChar.List;
+            this.btnBaoCaoThongKe.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(102)))), ((int)(((byte)(105)))));
+            this.btnBaoCaoThongKe.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBaoCaoThongKe.IconSize = 30;
+            this.btnBaoCaoThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBaoCaoThongKe.Location = new System.Drawing.Point(0, 347);
+            this.btnBaoCaoThongKe.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBaoCaoThongKe.Name = "btnBaoCaoThongKe";
+            this.btnBaoCaoThongKe.Padding = new System.Windows.Forms.Padding(8, 4, 8, 4);
+            this.btnBaoCaoThongKe.Size = new System.Drawing.Size(200, 50);
+            this.btnBaoCaoThongKe.TabIndex = 21;
+            this.btnBaoCaoThongKe.Text = "Báo cáo thống kê";
+            this.btnBaoCaoThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBaoCaoThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBaoCaoThongKe.UseVisualStyleBackColor = true;
+            this.btnBaoCaoThongKe.Click += new System.EventHandler(this.btnBaoCaoThongKe_Click);
+            // 
             // MainControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,14 +286,12 @@
             this.ClientSize = new System.Drawing.Size(1264, 729);
             this.Controls.Add(this.panelformularios);
             this.Controls.Add(this.panelMenuCustomer);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "MainControl";
-            this.Palette = this.kryptonPalette1;
-            this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.panelformularioss.ResumeLayout(false);
             this.panelMenuCustomer.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -500,23 +304,16 @@
         #endregion
         private System.Windows.Forms.Panel panelformularioss;
         private System.Windows.Forms.Label lblNameUser;
-        private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette1;
         private System.Windows.Forms.Panel panelMenuCustomer;
         private System.Windows.Forms.Panel panelformularios;
         private FontAwesome.Sharp.IconButton btnHome;
         private FontAwesome.Sharp.IconButton btnDangXuat;
-        private FontAwesome.Sharp.IconButton btnThongKeTB;
-        private FontAwesome.Sharp.IconButton btnQLThanhLy;
-        private FontAwesome.Sharp.IconButton btnQLMuonTra;
-        private FontAwesome.Sharp.IconButton btnQLLoaiTB;
-        private FontAwesome.Sharp.IconButton btnQLThietBi;
-        private FontAwesome.Sharp.IconButton btnQLNhomNguoiDung;
-        private FontAwesome.Sharp.IconButton btnQLNguoiDung;
-        private FontAwesome.Sharp.IconButton btnQLTaiKhoan;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btnQLKhachO;
         private FontAwesome.Sharp.IconButton btnQLPhong;
         private FontAwesome.Sharp.IconButton btnQLHopDong;
+        private FontAwesome.Sharp.IconButton btnQLThuTien;
+        private FontAwesome.Sharp.IconButton btnBaoCaoThongKe;
     }
 }

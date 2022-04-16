@@ -28,17 +28,16 @@ namespace QuanLyChungCu.View
             else return true;
         }
 
-        //Hàm xử lý lưu dữ liệu.
         private void GanDuLieu(Object.ObjRoom room)
         {
             room.RoomId = txtRoomId.Text.Trim();
             room.Cost = txtCost.Text.Trim();
             room.RoomFloor = txtRoomFloor.Text.Trim();
             room.RoomArea = txtRoomArea.Text.Trim();
-            room.RoomStatus = "Còn trống";
+            room.RoomStatus = "0";
+            room.RoomStatusTitle = "Phòng trống";
         }
 
-        //Hàm xử lý thông báo lỗi.
         private void ThongBao(string text)
         {
             MessageBox.Show(text, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -54,13 +53,10 @@ namespace QuanLyChungCu.View
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            txtRoomId.Clear();
-            txtCost.Clear();
-            txtRoomFloor.Clear();
-            txtRoomArea.Clear();
+            LamMoi();
         }
 
-        private void btnThemTK_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
         {
             Object.ObjRoom room = new Object.ObjRoom();
             if (checkNullItem())
@@ -70,8 +66,7 @@ namespace QuanLyChungCu.View
                     switch (roomCtrl.Them(room))
                     {
                         case 0:
-                            text = "Vui lòng chọn mã phòng khác!";
-                            ThongBao(text);
+                            ThongBao("Vui lòng chọn mã phòng khác!");
                             break;
                         case 1:
                             MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -82,7 +77,7 @@ namespace QuanLyChungCu.View
             }
             else
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ThongBao("Vui lòng điền đầy đủ thông tin");
             }
         }
 
@@ -97,29 +92,25 @@ namespace QuanLyChungCu.View
 
         private void txtRoomId_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            ValidNumber(e);
         }
 
         private void txtCost_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            ValidNumber(e);
         }
 
         private void txtRoomFloor_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            ValidNumber(e);
         }
 
         private void txtRoomArea_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidNumber(e);
+        }
+
+        public void ValidNumber(KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {

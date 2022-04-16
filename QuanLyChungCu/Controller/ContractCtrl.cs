@@ -13,20 +13,17 @@ namespace QuanLyChungCu.Controller
     {
         Model.ContractManage contractMng = new Model.ContractManage();
         HelperData.DataConfig helperData = new HelperData.DataConfig();
+        DwellerCtrl dwellerCtrl = new DwellerCtrl();
+        RoomCtrl room = new RoomCtrl();
 
-        public int Xoa(string id)
+        public int Xoa(Object.ObjContract contract)
         {
-            return contractMng.Xoa(id);
-        }
-
-        public int XoaNguoiDung(string roomId)
-        {
-            return contractMng.XoaNguoiDung(roomId);
+            return contractMng.Xoa(contract);
         }
 
         public void HienThi(DataGridView dgv, string id_contract)
         {
-            dgv.DataSource = contractMng.GetDataCustomer(id_contract).Tables[0];
+            dgv.DataSource = contractMng.GetDataContract().Tables[0];
         }
 
         public int Update(Object.ObjContract contract)
@@ -36,90 +33,31 @@ namespace QuanLyChungCu.Controller
 
         public int ThemHopDong(Object.ObjContract contract)
         {
-            if (!KTMaPhong(Convert.ToInt32(contract.RoomId)))
-                return 0;
             if (!KTTrangThaiPhong(Convert.ToInt32(contract.RoomId)))
+                return 0;
+            if (!KTHopDongCoSan(contract.TenantIdCard))
                 return 2;
             return 1;
         }
 
-        public int ThemNguoiDung(Object.ObjCustomerDetail customer)
-        {
-            if (!KTMaNguoiDung(Convert.ToInt32(customer.CustomerId)))
-                return 0;
-            return 1;
-        }
+        //public int ThemNguoiDung(Object.Obj customer)
+        //{
+        //    //if (!KTMaNguoiDung(Convert.ToInt32(customer.CustomerId)))
+        //    //    return 0;
+        //    //return 1;
+            
+        //}
 
-        public int KiemTraNguoiDung(Object.ObjContract contract)
-        {
-            if (!KTNguoiDung(Convert.ToInt32(contract.CustomerId), Convert.ToInt32(contract.RoomId)))
-                return 0;
-            return 1;
-        }
+        //public int KiemTraNguoiDung(Object.ObjContract contract)
+        //{
+        //    //if (!KTNguoiDung(Convert.ToInt32(contract.CustomerId), Convert.ToInt32(contract.RoomId)))
+        //    //    return 0;
+        //    //return 1;
+        //}
 
         public int CapNhatPhong(Object.ObjRoom room)
         {
             return contractMng.UpdateRoom(room);
-        }
-
-        public bool KTMaNguoiDung(int id)
-        {
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "SELECT * FROM Customer WHERE CustomerId = @id";
-                cmd.Parameters.Add("id", SqlDbType.Int).Value = id;
-                if (helperData.LayDuLieu(cmd).Tables[0].Rows.Count > 0)
-                    return false;
-                else
-                    return true;
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Mã tài khoản: " + e.Message);
-                return false;
-            }
-
-        }
-
-        public bool KTNguoiDung(int id, int roomId)
-        {
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "SELECT * FROM Customer WHERE CustomerId = @id AND RoomId = @roomId";
-                cmd.Parameters.Add("id", SqlDbType.Int).Value = id;
-                cmd.Parameters.Add("roomId", SqlDbType.Int).Value = roomId;
-                if (helperData.LayDuLieu(cmd).Tables[0].Rows.Count <= 0)
-                    return false;
-                else
-                    return true;
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Mã tài khoản: " + e.Message);
-                return false;
-            }
-        }
-
-        public bool KTMaPhong(int id)
-        {
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "SELECT * FROM Room WHERE RoomId = @id";
-                cmd.Parameters.Add("id", SqlDbType.Int).Value = id;
-                if (helperData.LayDuLieu(cmd).Tables[0].Rows.Count <= 0)
-                    return false;
-                else
-                    return true;
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Mã phòng: " + e.Message);
-                return false;
-            }
-
         }
 
         public bool KTTrangThaiPhong(int id)
@@ -141,9 +79,48 @@ namespace QuanLyChungCu.Controller
             }
         }
 
+        public bool KTHopDongCoSan(string id)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "SELECT * FROM Tenant INNER JOIN Contract ON Tenant.TenantIdCard = Contract.TenantIdCard " +
+                    "WHERE ContractStatus = N'Đang hiệu lực' AND Tenant.TenantIdCard = @id";
+                cmd.Parameters.Add("id", SqlDbType.VarChar).Value = id;
+                if (helperData.LayDuLieu(cmd).Tables[0].Rows.Count > 0)
+                    return false;
+                else
+                    return true;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Hợp đồng: " + e.Message);
+                return false;
+            }
+        }
+
+        public bool KTNguoiThue(string id)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "SELECT * FROM Tenant WHERE TenantIdCard = @id";
+                cmd.Parameters.Add("id", SqlDbType.VarChar).Value = id;
+                if (helperData.LayDuLieu(cmd).Tables[0].Rows.Count > 0)
+                    return false;
+                else
+                    return true;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Người thuê: " + e.Message);
+                return false;
+            }
+        }
+
         public void HienThiNguoiDung(DataGridView dgv, string tukhoa, string tieuchi)
         {
-            dgv.DataSource = contractMng.getListCustomerDetail(tukhoa, tieuchi).Tables[0];
+            dgv.DataSource = contractMng.getListContract(tukhoa, tieuchi).Tables[0];
         }
     }
 }

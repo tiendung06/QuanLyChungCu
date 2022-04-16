@@ -14,95 +14,72 @@ namespace QuanLyChungCu.Model
     {
         DataConfig cls = new DataConfig();
 
-        public DataSet GetDataCustomer(string idCustomer)
+        public DataSet GetDataContract()
         {
             SqlCommand sqlcmd;
-            sqlcmd = new SqlCommand("SELECT * FROM Contract");
+            sqlcmd = new SqlCommand("SELECT ContractId, RoomId, TenantIdCard, DateStart, DateEnd, ContractStatusTitle FROM Contract");
             return cls.LayDuLieu(sqlcmd);
         }
 
         public void HienThi(DataGridView dgv)
         {
-            dgv.DataSource = GetDataCustomer(Login.getIdCustomerLogin()).Tables[0];
+            dgv.DataSource = GetDataContract().Tables[0];
         }
 
-        public int Xoa(string id)
+        public int Xoa(Object.ObjContract contract)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "DELETE FROM Contract WHERE ContractId = @id";
-            cmd.Parameters.Add("id", SqlDbType.Int).Value = Convert.ToInt32(id);
-            return cls.CapNhatDL(cmd);
-        }
-
-        public int XoaNguoiDung(string roomId)
-        {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "DELETE FROM Customer WHERE RoomId = @id";
-            cmd.Parameters.Add("id", SqlDbType.Int).Value = Convert.ToInt32(roomId);
+            cmd.CommandText = "UPDATE Contract SET ContractStatus = @status, ContractStatusTitle = @title ContractId = @id";
+            cmd.Parameters.Add("id", SqlDbType.Int).Value = contract.ContractId;
+            cmd.Parameters.Add("status", SqlDbType.Int).Value = contract.ContractStatus;
+            cmd.Parameters.Add("title", SqlDbType.NVarChar).Value = contract.ContractStatusTitle;
             return cls.CapNhatDL(cmd);
         }
 
         public int Update(Object.ObjContract contract)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "UPDATE Contract SET RoomId = @roomId, CustomerId = @customerId, DateStart = @dateStart, DateEnd = @dateEnd WHERE ContractId = @contractId;";
-
+            cmd.CommandText = "UPDATE Contract SET RoomId = @roomId, TenantIdCard = @tenantIdCard, DateStart = @dateStart, DateEnd = @dateEnd, " +
+                "ContractStatus = @status, ContractStatusTitle = @title " +
+                "WHERE ContractId = @contractId;";
             cmd.Parameters.Add("roomId", SqlDbType.Int).Value = contract.RoomId;
-            cmd.Parameters.Add("customerId", SqlDbType.Int).Value = contract.CustomerId;
+            cmd.Parameters.Add("tenantIdCard", SqlDbType.VarChar).Value = contract.TenantIdCard;
             cmd.Parameters.Add("dateStart", SqlDbType.Date).Value = contract.DateStart;
             cmd.Parameters.Add("dateEnd", SqlDbType.Date).Value = contract.DateEnd;
+            cmd.Parameters.Add("status", SqlDbType.Int).Value = contract.ContractStatus;
+            cmd.Parameters.Add("title", SqlDbType.NVarChar).Value = contract.ContractStatusTitle;
             cmd.Parameters.Add("contractId", SqlDbType.Int).Value = contract.ContractId;
-
             return cls.CapNhatDL(cmd);
         }
 
         public int Save(Object.ObjContract contract)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT INTO Contract(RoomId, CustomerId, DateStart, DateEnd)" +
-                "VALUES (@roomId, @customerId, @dateStart, @dateEnd);"; 
-            
+            cmd.CommandText = "INSERT INTO Contract(RoomId, TenantIdCard, DateStart, DateEnd, ContractStatus, ContractStatusTitle)" +
+                "VALUES (@roomId, @tenantIdCard, @dateStart, @dateEnd, @status, @title);";
             cmd.Parameters.Add("roomId", SqlDbType.Int).Value = contract.RoomId;
-            cmd.Parameters.Add("customerId", SqlDbType.Int).Value = contract.CustomerId;
+            cmd.Parameters.Add("tenantIdCard", SqlDbType.VarChar).Value = contract.TenantIdCard;
             cmd.Parameters.Add("dateStart", SqlDbType.Date).Value = contract.DateStart;
             cmd.Parameters.Add("dateEnd", SqlDbType.Date).Value = contract.DateEnd;
-
-            return cls.CapNhatDL(cmd);
-        }
-
-        public int SaveCustomer(Object.ObjCustomerDetail cdt)
-        {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT INTO " +
-                "Customer(CustomerId, CustomerName, CustomerEmail, CustomerGender, CustomerBirthday, CustomerIdentityCard, RoomId) " +
-                "VALUES (@customerId, @name, @email, @gender, @birthday, @identity, @roomId)";
-
-            cmd.Parameters.Add("customerId", SqlDbType.Int).Value = cdt.CustomerId;
-            cmd.Parameters.Add("name", SqlDbType.NVarChar).Value = cdt.CustomerName;
-            cmd.Parameters.Add("email", SqlDbType.VarChar).Value = cdt.CustomerEmail;
-            cmd.Parameters.Add("gender", SqlDbType.NVarChar).Value = cdt.CustomerGender;
-            cmd.Parameters.Add("birthday", SqlDbType.Date).Value = cdt.CustomerBirthday;
-            cmd.Parameters.Add("identity", SqlDbType.NVarChar).Value = cdt.CustomerIdentityCard;
-            cmd.Parameters.Add("roomId", SqlDbType.Int).Value = cdt.RoomId;
-
+            cmd.Parameters.Add("status", SqlDbType.Int).Value = contract.ContractStatus;
+            cmd.Parameters.Add("title", SqlDbType.NVarChar).Value = contract.ContractStatusTitle;
             return cls.CapNhatDL(cmd);
         }
 
         public int UpdateRoom(Object.ObjRoom room)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "UPDATE Room SET RoomStatus = @status WHERE RoomId = @roomId;";
-
-            cmd.Parameters.Add("status", SqlDbType.NVarChar).Value = room.RoomStatus;
+            cmd.CommandText = "UPDATE Room SET RoomStatus = @status, RoomStatusTitle = @title WHERE RoomId = @roomId;";
+            cmd.Parameters.Add("status", SqlDbType.Int).Value = room.RoomStatus;
+            cmd.Parameters.Add("title", SqlDbType.NVarChar).Value = room.RoomStatusTitle;
             cmd.Parameters.Add("roomId", SqlDbType.Int).Value = room.RoomId;
-
             return cls.CapNhatDL(cmd);
         }
 
-        public DataSet getListCustomerDetail(string key, string tieuchi)
+        public DataSet getListContract(string key, string tieuchi)
         {
-            string sql = "SELECT * FROM Contract WHERE ";
-
+            string sql = "SELECT ContractId, RoomId, TenantIdCard, DateStart, DateEnd, ContractStatusTitle " +
+                "FROM Contract WHERE ";
             switch (tieuchi)
             {
                 case "RoomId":
@@ -122,7 +99,6 @@ namespace QuanLyChungCu.Model
                 MessageBox.Show("Null " + ce.Message);
                 return null;
             }
-
         }
     }
 }
