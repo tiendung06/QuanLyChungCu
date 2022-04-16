@@ -16,7 +16,7 @@ namespace QuanLyChungCu.Model
         public DataTable HTTongHoaDon()
         {
             SqlConnection connect = ConnectDatabase.connect;
-            string query = "SELECT COUNT(*) AS RentId FROM Rent WHERE RentStatus = N'Đã thanh toán'";
+            string query = "SELECT COUNT(*) AS RentId FROM Rent WHERE RentStatus = '1'";
 
             //action get database
             DataTable result = new DataTable();
@@ -38,7 +38,7 @@ namespace QuanLyChungCu.Model
             string query = "SELECT SUM(Room.Cost) AS Cost FROM Contract " +
                 "INNER JOIN Rent ON Contract.ContractId = Rent.ContractId " +
                 "INNER JOIN Room ON Contract.RoomId = Room.RoomId " +
-                "WHERE Rent.RentStatus = N'Đã thanh toán'";
+                "WHERE Rent.RentStatus = '1'";
 
             //action get database
             DataTable result = new DataTable();
@@ -82,7 +82,7 @@ namespace QuanLyChungCu.Model
                 "INNER JOIN Room ON Contract.RoomId = Room.RoomId " +
                 "INNER JOIN Tenant ON Contract.TenantIdCard = Tenant.TenantIdCard " +
                 "INNER JOIN Dweller ON Dweller.DwellerIdCard = Tenant.TenantIdCard " +
-                "WHERE Rent.RentStatus = N'Đã thanh toán'");
+                "WHERE Rent.RentStatus = '1'");
             try
             {
                 return cls.LayDuLieu(sqlcmd);
@@ -109,25 +109,6 @@ namespace QuanLyChungCu.Model
                 return null;
             }
 
-        }
-
-        public DataSet getDeviceToChar()
-        {
-            SqlConnection connect = ConnectDatabase.connect;
-            string query = "SELECT DATEPART(yyyy, Date_Liqui) AS 'Year', SUM(Id_Liqui) AS 'Total' FROM Liquidate GROUP BY DATEPART(yyyy, Date_Liqui)";
-
-            //action get database
-            DataSet result = new DataSet();
-            try
-            {
-                SqlDataAdapter sqldata = new SqlDataAdapter(query, connect);
-                sqldata.Fill(result);
-            }
-            catch (Exception)
-            {
-
-            }
-            return result;
         }
     }
 }
