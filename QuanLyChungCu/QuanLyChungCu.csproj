@@ -259,9 +259,8 @@
     <Content Include="Images\mc-green.png" />
     <Content Include="Images\mc-red.png" />
     <Content Include="Images\mc-yellw.png" />
+    <None Include="Resources\2711415.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

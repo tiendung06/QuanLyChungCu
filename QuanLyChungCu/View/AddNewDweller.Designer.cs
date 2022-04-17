@@ -54,7 +54,7 @@
             // btnThoat
             // 
             this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThoat.Location = new System.Drawing.Point(318, 146);
+            this.btnThoat.Location = new System.Drawing.Point(338, 146);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(34)))), ((int)(((byte)(45)))));
@@ -131,7 +131,7 @@
             this.btnThemNguoiThue.OverrideDefault.Border.Rounding = 6;
             this.btnThemNguoiThue.OverrideDefault.Border.Width = 1;
             this.btnThemNguoiThue.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.btnThemNguoiThue.Size = new System.Drawing.Size(125, 36);
+            this.btnThemNguoiThue.Size = new System.Drawing.Size(145, 36);
             this.btnThemNguoiThue.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
             this.btnThemNguoiThue.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
             this.btnThemNguoiThue.StateCommon.Back.ColorAngle = 45F;
@@ -177,7 +177,7 @@
             this.btnThemNguoiThue.StateTracking.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.btnThemNguoiThue.StateTracking.Border.Width = 1;
             this.btnThemNguoiThue.TabIndex = 8;
-            this.btnThemNguoiThue.Values.Text = "Thêm";
+            this.btnThemNguoiThue.Values.Text = "Thêm người thuê";
             this.btnThemNguoiThue.Click += new System.EventHandler(this.btnThemNguoiThue_Click);
             // 
             // btnLamMoi
@@ -293,7 +293,7 @@
             // 
             // mntDwellerBirthday
             // 
-            this.mntDwellerBirthday.Location = new System.Drawing.Point(749, 0);
+            this.mntDwellerBirthday.Location = new System.Drawing.Point(92, 0);
             this.mntDwellerBirthday.MaxSelectionCount = 1;
             this.mntDwellerBirthday.Name = "mntDwellerBirthday";
             this.mntDwellerBirthday.TabIndex = 130;
@@ -304,7 +304,7 @@
             // txtTenantIdCard
             // 
             this.txtTenantIdCard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtTenantIdCard.Location = new System.Drawing.Point(455, 62);
+            this.txtTenantIdCard.Location = new System.Drawing.Point(428, 62);
             this.txtTenantIdCard.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenantIdCard.Name = "txtTenantIdCard";
             this.txtTenantIdCard.Size = new System.Drawing.Size(166, 31);
@@ -329,7 +329,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 9.75F);
-            this.label1.Location = new System.Drawing.Point(340, 70);
+            this.label1.Location = new System.Drawing.Point(313, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 15);
             this.label1.TabIndex = 132;
@@ -338,7 +338,7 @@
             // btnDwellerBirthday
             // 
             this.btnDwellerBirthday.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDwellerBirthday.Location = new System.Drawing.Point(846, 22);
+            this.btnDwellerBirthday.Location = new System.Drawing.Point(189, 62);
             this.btnDwellerBirthday.Margin = new System.Windows.Forms.Padding(2);
             this.btnDwellerBirthday.Name = "btnDwellerBirthday";
             this.btnDwellerBirthday.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
@@ -392,14 +392,14 @@
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.btnDwellerBirthday.StateTracking.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
             this.btnDwellerBirthday.StateTracking.Border.Width = 1;
-            this.btnDwellerBirthday.TabIndex = 3;
+            this.btnDwellerBirthday.TabIndex = 4;
             this.btnDwellerBirthday.Values.Text = "...";
             this.btnDwellerBirthday.Click += new System.EventHandler(this.btnDwellerBirthday_Click);
             // 
             // txtDwellerBirthday
             // 
             this.txtDwellerBirthday.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtDwellerBirthday.Location = new System.Drawing.Point(749, 22);
+            this.txtDwellerBirthday.Location = new System.Drawing.Point(92, 62);
             this.txtDwellerBirthday.Margin = new System.Windows.Forms.Padding(2);
             this.txtDwellerBirthday.Name = "txtDwellerBirthday";
             this.txtDwellerBirthday.Size = new System.Drawing.Size(93, 31);
@@ -427,7 +427,7 @@
             this.cbbDwellerGender.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.cbbDwellerGender.Location = new System.Drawing.Point(455, 24);
+            this.cbbDwellerGender.Location = new System.Drawing.Point(699, 25);
             this.cbbDwellerGender.Name = "cbbDwellerGender";
             this.cbbDwellerGender.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.cbbDwellerGender.Size = new System.Drawing.Size(166, 25);
@@ -442,12 +442,12 @@
             this.cbbDwellerGender.StateCommon.ComboBox.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(51)))));
             this.cbbDwellerGender.StateCommon.ComboBox.Content.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbDwellerGender.StateCommon.ComboBox.Content.Padding = new System.Windows.Forms.Padding(15, 5, 15, 5);
-            this.cbbDwellerGender.TabIndex = 2;
+            this.cbbDwellerGender.TabIndex = 3;
             // 
             // txtDwellerName
             // 
             this.txtDwellerName.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtDwellerName.Location = new System.Drawing.Point(119, 24);
+            this.txtDwellerName.Location = new System.Drawing.Point(428, 22);
             this.txtDwellerName.Margin = new System.Windows.Forms.Padding(2);
             this.txtDwellerName.Name = "txtDwellerName";
             this.txtDwellerName.Size = new System.Drawing.Size(166, 31);
@@ -464,13 +464,13 @@
             this.txtDwellerName.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDwellerName.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.txtDwellerName.StateDisabled.Back.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.txtDwellerName.TabIndex = 1;
+            this.txtDwellerName.TabIndex = 2;
             this.txtDwellerName.WordWrap = false;
             // 
             // txtDwellerIdCard
             // 
             this.txtDwellerIdCard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtDwellerIdCard.Location = new System.Drawing.Point(119, 62);
+            this.txtDwellerIdCard.Location = new System.Drawing.Point(92, 22);
             this.txtDwellerIdCard.Margin = new System.Windows.Forms.Padding(2);
             this.txtDwellerIdCard.Name = "txtDwellerIdCard";
             this.txtDwellerIdCard.Size = new System.Drawing.Size(166, 31);
@@ -487,15 +487,16 @@
             this.txtDwellerIdCard.StateCommon.Content.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDwellerIdCard.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.txtDwellerIdCard.StateDisabled.Back.Color1 = System.Drawing.Color.WhiteSmoke;
-            this.txtDwellerIdCard.TabIndex = 4;
+            this.txtDwellerIdCard.TabIndex = 1;
             this.txtDwellerIdCard.WordWrap = false;
             this.txtDwellerIdCard.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDwellerIdCard_KeyPress);
+            this.txtDwellerIdCard.Leave += new System.EventHandler(this.txtDwellerIdCard_Leave);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Roboto", 9.75F);
-            this.label13.Location = new System.Drawing.Point(20, 70);
+            this.label13.Location = new System.Drawing.Point(20, 30);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(47, 15);
             this.label13.TabIndex = 129;
@@ -505,7 +506,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Roboto", 9.75F);
-            this.label17.Location = new System.Drawing.Point(677, 30);
+            this.label17.Location = new System.Drawing.Point(20, 70);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(67, 15);
             this.label17.TabIndex = 128;
@@ -515,7 +516,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Roboto", 9.75F);
-            this.label19.Location = new System.Drawing.Point(340, 30);
+            this.label19.Location = new System.Drawing.Point(633, 30);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(60, 15);
             this.label19.TabIndex = 127;
@@ -525,7 +526,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Roboto", 9.75F);
-            this.label22.Location = new System.Drawing.Point(20, 30);
+            this.label22.Location = new System.Drawing.Point(313, 30);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(94, 15);
             this.label22.TabIndex = 125;

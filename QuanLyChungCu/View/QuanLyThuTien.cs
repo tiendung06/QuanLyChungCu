@@ -56,7 +56,7 @@ namespace QuanLyChungCu.View
                 txtContractId.Text = dgvDSChiTietThuTien.CurrentRow.Cells["ContractId"].Value.ToString();
                 txtPayday.Text = dgvDSChiTietThuTien.CurrentRow.Cells["Payday"].Value.ToString();
                 txtSettlementDay.Text = dgvDSChiTietThuTien.CurrentRow.Cells["SettlementDay"].Value.ToString();
-                txtRentStatus.Text = dgvDSChiTietThuTien.CurrentRow.Cells["RentStatus"].Value.ToString();
+                txtRentStatus.Text = dgvDSChiTietThuTien.CurrentRow.Cells["RentStatusTitle"].Value.ToString();
                 txtCost.Text = dgvDSChiTietThuTien.CurrentRow.Cells["Cost"].Value.ToString();
                 txtMonth.Text = dgvDSChiTietThuTien.CurrentRow.Cells["Month"].Value.ToString();
             }
@@ -69,6 +69,7 @@ namespace QuanLyChungCu.View
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
+            rentManage.HienThi(dgvDSChiTietThuTien);
             txtRentId.Clear();
             txtContractId.Clear();
             txtRentStatus.Clear();
@@ -76,6 +77,7 @@ namespace QuanLyChungCu.View
             txtSettlementDay.Clear();
             txtCost.Clear();
             txtMonth.Clear();
+            rentCtrl.HienThi(dgvDSChiTietThuTien);
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
@@ -83,14 +85,14 @@ namespace QuanLyChungCu.View
             DialogResult dlg = MessageBox.Show("Bạn có muốn thanh toán hóa đơn này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dlg == DialogResult.Yes)
             {
-                if (txtRentStatus.Text == "Chưa thanh toán")
+                if (txtRentStatus.Text == "Chưa đóng tiền")
                 {
                     setDataRent(rent);
-                    rent.RentStatus = "Đã thanh toán";
+                    rent.RentStatusTitle = "Đã đóng tiền";
+                    rent.RentStatus = "1";
                     DateTime dateTime = DateTime.Now;
                     rent.SettlementDay = dateTime.ToString("yyyy-MM-dd");
-                    string text = "Bạn có muốn thanh toán hóa đơn này?";
-                    changeStatus(text);
+                    changeStatus();
                 }
                 else
                 {
@@ -104,12 +106,12 @@ namespace QuanLyChungCu.View
             DialogResult dlg = MessageBox.Show("Bạn có muốn hủy thanh toán hóa đơn này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dlg == DialogResult.Yes)
             {
-                if (txtRentStatus.Text == "Đã thanh toán")
+                if (txtRentStatus.Text == "Đã đóng tiền")
                 {
                     setDataRent(rent);
-                    rent.RentStatus = "Chưa thanh toán";
-                    string text = "Bạn có muốn hủy thanh toán hóa đơn này?";
-                    changeStatus(text);
+                    rent.RentStatusTitle = "Chưa đóng tiền";
+                    rent.RentStatus = "0";
+                    changeStatus();
                     rentCtrl.Huy(rent);
                     rentManage.HienThi(dgvDSChiTietThuTien);
                     HienThiThongTin();
@@ -125,7 +127,7 @@ namespace QuanLyChungCu.View
         {
             if (checkNull())
             {
-                if (txtRentStatus.Text == "Đã thanh toán")
+                if (txtRentStatus.Text == "Đã đóng tiền")
                 {
                     string rentId = dgvDSChiTietThuTien.CurrentRow.Cells[0].Value.ToString();
                     ExportWord export = new ExportWord();
@@ -147,7 +149,7 @@ namespace QuanLyChungCu.View
         {
             rent.RentId = txtRentId.Text;
             rent.ContractId = txtContractId.Text;
-            rent.RentStatus = txtRentStatus.Text;
+            rent.RentStatusTitle = txtRentStatus.Text;
             rent.Payday = txtPayday.Text;
             rent.SettlementDay = txtSettlementDay.Text;
             rent.Month = txtMonth.Text;
@@ -174,19 +176,15 @@ namespace QuanLyChungCu.View
             return true;
         }
 
-        private void changeStatus(string text)
+        private void changeStatus()
         {
             if (checkNull())
             {
-                DialogResult dlg = MessageBox.Show(text, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dlg == DialogResult.Yes)
+                if (rentCtrl.Update(rent) > 0)
                 {
-                    if (rentCtrl.Update(rent) > 0)
-                    {
-                        MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        rentManage.HienThi(dgvDSChiTietThuTien);
-                        HienThiThongTin();
-                    }
+                    MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    rentManage.HienThi(dgvDSChiTietThuTien);
+                    HienThiThongTin();
                 }
             }
             else
@@ -261,7 +259,7 @@ namespace QuanLyChungCu.View
                     rent.RentId = maHoaDon;
                     rent.Month = date.Month.ToString();
                     rent.ContractId = list[i].ToString();
-                    rent.RentStatus = "Chưa thanh toán";
+                    rent.RentStatus = "Chưa đóng tiền";
                     rent.Payday = date.ToString("yyyy-MM-dd");
                     rentCtrl.Add(rent);
                 }

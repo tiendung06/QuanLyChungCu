@@ -17,7 +17,7 @@ namespace QuanLyChungCu.Model
         public DataSet GetDataRent()
         {
             SqlCommand sqlcmd;
-            sqlcmd = new SqlCommand("SELECT Rent.RentId, Rent.ContractId, Rent.RentStatus, Rent.Month, Rent.PayDay, Rent.SettlementDay, Room.Cost " +
+            sqlcmd = new SqlCommand("SELECT Rent.RentId, Rent.ContractId, Rent.RentStatusTitle, Rent.Month, Rent.PayDay, Rent.SettlementDay, Room.Cost " +
                 "FROM Rent INNER JOIN Contract ON Rent.ContractId = Contract.ContractId INNER JOIN Room ON Contract.RoomId = Room.RoomId " +
                 "ORDER BY RentStatus, Payday ASC");
             return cls.LayDuLieu(sqlcmd);
@@ -31,10 +31,11 @@ namespace QuanLyChungCu.Model
         public int Update(Object.ObjRent rent)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "UPDATE Rent SET RentStatus = @status, SettlementDay = @settlementDay WHERE RentId = @id";
+            cmd.CommandText = "UPDATE Rent SET RentStatus = @status, RentStatusTitle = @title, SettlementDay = @settlementDay WHERE RentId = @id";
             cmd.Parameters.Add("id", SqlDbType.NVarChar).Value = rent.RentId;
             cmd.Parameters.Add("settlementDay", SqlDbType.Date).Value = rent.SettlementDay;
-            cmd.Parameters.Add("status", SqlDbType.NVarChar).Value = rent.RentStatus;
+            cmd.Parameters.Add("status", SqlDbType.Int).Value = rent.RentStatus;
+            cmd.Parameters.Add("title", SqlDbType.NVarChar).Value = rent.RentStatusTitle;
             return cls.CapNhatDL(cmd);
         }
 
@@ -49,10 +50,11 @@ namespace QuanLyChungCu.Model
         public int Save(Object.ObjRent rent)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT INTO Rent(RentId, RentStatus, Payday, SettlementDay, ContractId, Month)" +
-                "VALUES (@rentId, @status, @payday, @settlementDay, @contractId, @cost, @month);";
+            cmd.CommandText = "INSERT INTO Rent(RentId, RentStatus, RentStatusTitle, Payday, SettlementDay, ContractId, Month)" +
+                "VALUES (@rentId, @status, @title, @payday, @settlementDay, @contractId, @cost, @month);";
             cmd.Parameters.Add("rentId", SqlDbType.NVarChar).Value = rent.RentId;
             cmd.Parameters.Add("status", SqlDbType.NVarChar).Value = rent.RentStatus;
+            cmd.Parameters.Add("title", SqlDbType.NVarChar).Value = rent.RentStatusTitle;
             cmd.Parameters.Add("payday", SqlDbType.Date).Value = rent.Payday;
             cmd.Parameters.Add("settlementDay", SqlDbType.Date).Value = rent.SettlementDay;
             cmd.Parameters.Add("contractId", SqlDbType.Int).Value = rent.ContractId;
@@ -62,15 +64,16 @@ namespace QuanLyChungCu.Model
 
         public DataSet getListRent(string key, string tieuchi)
         {
-            string sql = "SELECT * FROM Rent WHERE ";
-
+            string sql = "SELECT Rent.RentId, Rent.ContractId, Rent.RentStatusTitle, Rent.Month, Rent.PayDay, Rent.SettlementDay, Room.Cost " +
+                "FROM Rent INNER JOIN Contract ON Rent.ContractId = Contract.ContractId INNER JOIN Room ON Contract.RoomId = Room.RoomId " +
+                "WHERE ";
             switch (tieuchi)
             {
-                case "RendId":
-                    sql += "RentId = " + key + "";
+                case "RentId":
+                    sql += "RentId like N'%" + key + "%'";
                     break;
                 default:
-                    sql += "ContractId = " + key + "";
+                    sql += "Rent.ContractId = " + key + "";
                     break;
             }
             try

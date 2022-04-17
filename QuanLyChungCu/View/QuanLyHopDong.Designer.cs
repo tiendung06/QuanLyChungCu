@@ -38,6 +38,12 @@
             this.errDateEnd = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelQuanLyHopDong = new System.Windows.Forms.Panel();
             this.dgvDSChiTietHopDong = new System.Windows.Forms.DataGridView();
+            this.ContractId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenantIdCard = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContractStatusTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpThongTinHopDong = new Guna.UI.WinForms.GunaGroupBox();
             this.mntDateStart = new System.Windows.Forms.MonthCalendar();
             this.mntDateEnd = new System.Windows.Forms.MonthCalendar();
@@ -66,12 +72,6 @@
             this.optionCombobox = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.btnTimKiem = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.txtTimKiem = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.ContractId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoomId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenantIdCard = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ContractStatusTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.errContractId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errRoomId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errTenantId)).BeginInit();
@@ -153,6 +153,58 @@
             this.dgvDSChiTietHopDong.Size = new System.Drawing.Size(1010, 378);
             this.dgvDSChiTietHopDong.TabIndex = 35;
             this.dgvDSChiTietHopDong.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvDSChiTietHopDong_MouseClick);
+            // 
+            // ContractId
+            // 
+            this.ContractId.DataPropertyName = "ContractId";
+            this.ContractId.HeaderText = "Mã hợp đồng";
+            this.ContractId.MinimumWidth = 6;
+            this.ContractId.Name = "ContractId";
+            this.ContractId.ReadOnly = true;
+            this.ContractId.Width = 130;
+            // 
+            // RoomId
+            // 
+            this.RoomId.DataPropertyName = "RoomId";
+            this.RoomId.HeaderText = "Mã phòng";
+            this.RoomId.MinimumWidth = 6;
+            this.RoomId.Name = "RoomId";
+            this.RoomId.ReadOnly = true;
+            this.RoomId.Width = 120;
+            // 
+            // TenantIdCard
+            // 
+            this.TenantIdCard.DataPropertyName = "TenantIdCard";
+            this.TenantIdCard.HeaderText = "CMND nguời đứng tên";
+            this.TenantIdCard.Name = "TenantIdCard";
+            this.TenantIdCard.ReadOnly = true;
+            this.TenantIdCard.Width = 180;
+            // 
+            // DateStart
+            // 
+            this.DateStart.DataPropertyName = "DateStart";
+            this.DateStart.HeaderText = "Ngày bắt đầu";
+            this.DateStart.MinimumWidth = 6;
+            this.DateStart.Name = "DateStart";
+            this.DateStart.ReadOnly = true;
+            this.DateStart.Width = 140;
+            // 
+            // DateEnd
+            // 
+            this.DateEnd.DataPropertyName = "DateEnd";
+            this.DateEnd.HeaderText = "Ngày kết thúc";
+            this.DateEnd.MinimumWidth = 6;
+            this.DateEnd.Name = "DateEnd";
+            this.DateEnd.ReadOnly = true;
+            this.DateEnd.Width = 140;
+            // 
+            // ContractStatusTitle
+            // 
+            this.ContractStatusTitle.DataPropertyName = "ContractStatusTitle";
+            this.ContractStatusTitle.HeaderText = "Trạng thái";
+            this.ContractStatusTitle.Name = "ContractStatusTitle";
+            this.ContractStatusTitle.ReadOnly = true;
+            this.ContractStatusTitle.Width = 140;
             // 
             // grpThongTinHopDong
             // 
@@ -1010,58 +1062,6 @@
             this.txtTimKiem.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.txtTimKiem.TabIndex = 13;
             this.txtTimKiem.WordWrap = false;
-            // 
-            // ContractId
-            // 
-            this.ContractId.DataPropertyName = "ContractId";
-            this.ContractId.HeaderText = "Mã hợp đồng";
-            this.ContractId.MinimumWidth = 6;
-            this.ContractId.Name = "ContractId";
-            this.ContractId.ReadOnly = true;
-            this.ContractId.Width = 130;
-            // 
-            // RoomId
-            // 
-            this.RoomId.DataPropertyName = "RoomId";
-            this.RoomId.HeaderText = "Mã phòng";
-            this.RoomId.MinimumWidth = 6;
-            this.RoomId.Name = "RoomId";
-            this.RoomId.ReadOnly = true;
-            this.RoomId.Width = 120;
-            // 
-            // TenantIdCard
-            // 
-            this.TenantIdCard.DataPropertyName = "TenantIdCard";
-            this.TenantIdCard.HeaderText = "CMND nguời đứng tên";
-            this.TenantIdCard.Name = "TenantIdCard";
-            this.TenantIdCard.ReadOnly = true;
-            this.TenantIdCard.Width = 180;
-            // 
-            // DateStart
-            // 
-            this.DateStart.DataPropertyName = "DateStart";
-            this.DateStart.HeaderText = "Ngày bắt đầu";
-            this.DateStart.MinimumWidth = 6;
-            this.DateStart.Name = "DateStart";
-            this.DateStart.ReadOnly = true;
-            this.DateStart.Width = 140;
-            // 
-            // DateEnd
-            // 
-            this.DateEnd.DataPropertyName = "DateEnd";
-            this.DateEnd.HeaderText = "Ngày kết thúc";
-            this.DateEnd.MinimumWidth = 6;
-            this.DateEnd.Name = "DateEnd";
-            this.DateEnd.ReadOnly = true;
-            this.DateEnd.Width = 140;
-            // 
-            // ContractStatusTitle
-            // 
-            this.ContractStatusTitle.DataPropertyName = "ContractStatusTitle";
-            this.ContractStatusTitle.HeaderText = "Trạng thái";
-            this.ContractStatusTitle.Name = "ContractStatusTitle";
-            this.ContractStatusTitle.ReadOnly = true;
-            this.ContractStatusTitle.Width = 140;
             // 
             // QuanLyHopDong
             // 

@@ -14,7 +14,7 @@ namespace QuanLyChungCu.Model
     {
         DataConfig cls = new DataConfig();
 
-        public DataSet GetDataRoom(string idRoom)
+        public DataSet GetDataRoom()
         {
             SqlCommand sqlcmd;
             sqlcmd = new SqlCommand("SELECT RoomId, Cost, RoomFloor, RoomArea, RoomStatusTitle FROM Room");
@@ -23,18 +23,17 @@ namespace QuanLyChungCu.Model
 
         public void HienThi(DataGridView dgv)
         {
-            dgv.DataSource = GetDataRoom(Login.getIdCustomerLogin()).Tables[0];
+            dgv.DataSource = GetDataRoom().Tables[0];
         }
 
         public int Update(Object.ObjRoom room)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "UPDATE Room SET Cost = @cost, RoomFloor = @floor, RoomArea = @area, RoomStatus = @status, RoomStatusTitle = @title" +
+            cmd.CommandText = "UPDATE Room SET Cost = @cost, RoomFloor = @floor, RoomArea = @area, RoomStatusTitle = @title" +
                 " WHERE RoomId = @id";
             cmd.Parameters.Add("cost", SqlDbType.Float).Value = room.Cost;
             cmd.Parameters.Add("floor", SqlDbType.Int).Value = room.RoomFloor;
             cmd.Parameters.Add("area", SqlDbType.Float).Value = room.RoomArea;
-            cmd.Parameters.Add("status", SqlDbType.Int).Value = room.RoomStatus;
             cmd.Parameters.Add("title", SqlDbType.NVarChar).Value = room.RoomStatusTitle;
             cmd.Parameters.Add("id", SqlDbType.Int).Value = room.RoomId;
 
@@ -50,7 +49,7 @@ namespace QuanLyChungCu.Model
             cmd.Parameters.Add("id", SqlDbType.Int).Value = cdt.RoomId;
             cmd.Parameters.Add("cost", SqlDbType.Float).Value = cdt.Cost;
             cmd.Parameters.Add("floor", SqlDbType.Int).Value = cdt.RoomFloor;
-            cmd.Parameters.Add("area", SqlDbType.Float).Value= cdt.RoomArea;
+            cmd.Parameters.Add("area", SqlDbType.Float).Value = cdt.RoomArea;
             cmd.Parameters.Add("status", SqlDbType.Int).Value = cdt.RoomStatus;
             cmd.Parameters.Add("title", SqlDbType.NVarChar).Value = cdt.RoomStatusTitle;
             return cls.CapNhatDL(cmd);

@@ -14,9 +14,9 @@ namespace QuanLyChungCu.Controller
         Model.RoomManage roomMng = new Model.RoomManage();
         HelperData.DataConfig helperData = new HelperData.DataConfig();
 
-        public void HienThi(DataGridView dgv, string id_room)
+        public void HienThi(DataGridView dgv)
         {
-            dgv.DataSource = roomMng.GetDataRoom(id_room).Tables[0];
+            dgv.DataSource = roomMng.GetDataRoom().Tables[0];
         }
 
         public int Update(Object.ObjRoom room)

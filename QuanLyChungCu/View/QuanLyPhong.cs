@@ -26,8 +26,8 @@ namespace QuanLyChungCu.View
         {
             if (Login.resultLogin != 1)
             {
-
-                btnThemTK.Enabled = false;
+                btnCapNhat.Visible = false;
+                btnThemTK.Visible = false;
             }
             RoomManage.HienThi(dgvDSChiTietPhong);
             HienThiThongTin();
@@ -63,6 +63,7 @@ namespace QuanLyChungCu.View
             txtRoomArea.Clear();
             txtRoomStatus.Clear();
             txtTimKiem.Clear();
+            roomCtrl.HienThi(dgvDSChiTietPhong);
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
@@ -133,7 +134,7 @@ namespace QuanLyChungCu.View
             room.Cost = txtCost.Text;
             room.RoomFloor = txtRoomFloor.Text;
             room.RoomArea = txtRoomArea.Text;
-            room.RoomStatus = txtRoomStatus.Text;
+            room.RoomStatusTitle = txtRoomStatus.Text;
         }
 
         private void btnThemTK_Click(object sender, EventArgs e)

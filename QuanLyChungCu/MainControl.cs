@@ -21,6 +21,10 @@ namespace QuanLyChungCu
             lblNameUser.Text = Login.nameLogin;
             this.lblNameUser.Left = (this.lblNameUser.Parent.Width - this.lblNameUser.Width) / 2;
             home();
+            if (Login.resultLogin != 1)
+            {
+                btnBaoCaoThongKe.Visible = false;
+            }
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
@@ -33,7 +37,7 @@ namespace QuanLyChungCu
         }
 
         //set form
-        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
+        public void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
             Form formulario;
             formulario = panelformularios.Controls.OfType<MiForm>().FirstOrDefault();
@@ -55,7 +59,7 @@ namespace QuanLyChungCu
             }
         }
 
-        private void CloseForms(object sender, FormClosedEventArgs e)
+        public void CloseForms(object sender, FormClosedEventArgs e)
         {
             if (Application.OpenForms["QuanLyPhong"] == null)
                 btnQLPhong.BackColor = Color.FromArgb(250, 255, 252);
@@ -70,7 +74,7 @@ namespace QuanLyChungCu
         }
 
         //reset color for button
-        private void resetColorForButton()
+        public void resetColorForButton()
         {
             btnHome.BackColor = Color.FromArgb(250, 255, 252);
             btnHome.ForeColor = Color.FromArgb(103, 102, 105);

@@ -40,13 +40,12 @@ namespace QuanLyChungCu.Model
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "UPDATE Contract SET RoomId = @roomId, TenantIdCard = @tenantIdCard, DateStart = @dateStart, DateEnd = @dateEnd, " +
-                "ContractStatus = @status, ContractStatusTitle = @title " +
+                "ContractStatusTitle = @title " +
                 "WHERE ContractId = @contractId;";
             cmd.Parameters.Add("roomId", SqlDbType.Int).Value = contract.RoomId;
             cmd.Parameters.Add("tenantIdCard", SqlDbType.VarChar).Value = contract.TenantIdCard;
             cmd.Parameters.Add("dateStart", SqlDbType.Date).Value = contract.DateStart;
             cmd.Parameters.Add("dateEnd", SqlDbType.Date).Value = contract.DateEnd;
-            cmd.Parameters.Add("status", SqlDbType.Int).Value = contract.ContractStatus;
             cmd.Parameters.Add("title", SqlDbType.NVarChar).Value = contract.ContractStatusTitle;
             cmd.Parameters.Add("contractId", SqlDbType.Int).Value = contract.ContractId;
             return cls.CapNhatDL(cmd);

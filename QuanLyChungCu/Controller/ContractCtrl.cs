@@ -13,15 +13,13 @@ namespace QuanLyChungCu.Controller
     {
         Model.ContractManage contractMng = new Model.ContractManage();
         HelperData.DataConfig helperData = new HelperData.DataConfig();
-        DwellerCtrl dwellerCtrl = new DwellerCtrl();
-        RoomCtrl room = new RoomCtrl();
 
         public int Xoa(Object.ObjContract contract)
         {
             return contractMng.Xoa(contract);
         }
 
-        public void HienThi(DataGridView dgv, string id_contract)
+        public void HienThi(DataGridView dgv)
         {
             dgv.DataSource = contractMng.GetDataContract().Tables[0];
         }
@@ -40,21 +38,6 @@ namespace QuanLyChungCu.Controller
             return 1;
         }
 
-        //public int ThemNguoiDung(Object.Obj customer)
-        //{
-        //    //if (!KTMaNguoiDung(Convert.ToInt32(customer.CustomerId)))
-        //    //    return 0;
-        //    //return 1;
-            
-        //}
-
-        //public int KiemTraNguoiDung(Object.ObjContract contract)
-        //{
-        //    //if (!KTNguoiDung(Convert.ToInt32(contract.CustomerId), Convert.ToInt32(contract.RoomId)))
-        //    //    return 0;
-        //    //return 1;
-        //}
-
         public int CapNhatPhong(Object.ObjRoom room)
         {
             return contractMng.UpdateRoom(room);
@@ -65,7 +48,7 @@ namespace QuanLyChungCu.Controller
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "SELECT * FROM Room WHERE RoomId = @id AND RoomStatus = N'Đã được thuê'";
+                cmd.CommandText = "SELECT * FROM Room WHERE RoomId = @id AND RoomStatus = '1'";
                 cmd.Parameters.Add("id", SqlDbType.Int).Value = id;
                 if (helperData.LayDuLieu(cmd).Tables[0].Rows.Count > 0)
                     return false;
@@ -85,7 +68,7 @@ namespace QuanLyChungCu.Controller
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandText = "SELECT * FROM Tenant INNER JOIN Contract ON Tenant.TenantIdCard = Contract.TenantIdCard " +
-                    "WHERE ContractStatus = N'Đang hiệu lực' AND Tenant.TenantIdCard = @id";
+                    "WHERE ContractStatus = '2' AND Tenant.TenantIdCard = @id";
                 cmd.Parameters.Add("id", SqlDbType.VarChar).Value = id;
                 if (helperData.LayDuLieu(cmd).Tables[0].Rows.Count > 0)
                     return false;

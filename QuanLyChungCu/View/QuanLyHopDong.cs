@@ -35,6 +35,7 @@ namespace QuanLyChungCu.View
                 btnXoa.Visible = false;
                 btnThemHopDong.Visible = false;
                 btnCapNhat.Visible = false;
+                btnXuatHopDong.Visible = false;
             }
             contractManage.HienThi(dgvDSChiTietHopDong);
             HienThiThongTin();
@@ -101,6 +102,7 @@ namespace QuanLyChungCu.View
             txtDateStart.Clear();
             txtDateEnd.Clear();
             txtTimKiem.Clear();
+            contractCtrl.HienThi(dgvDSChiTietHopDong);
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
@@ -119,7 +121,7 @@ namespace QuanLyChungCu.View
                 {
                     if (calculateTime(dateStart, dateEnd) >= 30)
                     {
-                        if (dwellerCtrl.KTCMNDNguoiThue(contract.TenantIdCard))
+                        if (dwellerCtrl.KTCMNDNguoiDungTen(contract.TenantIdCard))
                         {
                             if (contractCtrl.Update(contract) > 0)
                             {
@@ -189,7 +191,7 @@ namespace QuanLyChungCu.View
             if (contractCtrl.Update(contract) > 0)
             {
                 MessageBox.Show("Hủy hợp đồng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                contractCtrl.HienThi(dgvDSChiTietHopDong, contractId);
+                contractCtrl.HienThi(dgvDSChiTietHopDong);
                 HienThiThongTin();
             }
             else

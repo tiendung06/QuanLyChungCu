@@ -47,7 +47,7 @@ namespace QuanLyChungCu.Model
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "UPDATE Dweller SET DwellerName = @name, DwellerGender = @gender, DwellerBirthday = @birthday, " +
-                "DwellerIdCard = @dwellerIdCard, DwellerStatus = @status DwellerStatusTitle = @title WHERE DwellerId = @id;";
+                "DwellerIdCard = @dwellerIdCard, DwellerStatus = @status, DwellerStatusTitle = @title WHERE DwellerId = @id;";
             cmd.Parameters.Add("id", SqlDbType.Int).Value = dweller.DwellerId;
             cmd.Parameters.Add("name", SqlDbType.NVarChar).Value = dweller.DwellerName;
             cmd.Parameters.Add("gender", SqlDbType.NVarChar).Value = dweller.DwellerGender;
@@ -62,8 +62,24 @@ namespace QuanLyChungCu.Model
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "INSERT INTO " +
-                "Dweller(DwellerName, DwellerGender, DwellerBirthday, DwellerIdCard, DwellerStatus, DwellerStatusTitle, TenantIdCard) " +
-                "VALUES (@name, @gender, @birthday, @dwellerIdCard, @status, @title, @tenantIdCard)";
+                "Dweller(DwellerName, DwellerGender, DwellerBirthday, DwellerIdCard, DwellerStatusTitle, TenantIdCard, DwellerStatus) " +
+                "VALUES (@name, @gender, @birthday, @dwellerIdCard, @title, @tenantIdCard, @status)";
+            cmd.Parameters.Add("tenantIdCard", SqlDbType.VarChar).Value = dweller.TenantIdCard;
+            cmd.Parameters.Add("name", SqlDbType.NVarChar).Value = dweller.DwellerName;
+            cmd.Parameters.Add("gender", SqlDbType.NVarChar).Value = dweller.DwellerGender;
+            cmd.Parameters.Add("birthday", SqlDbType.Date).Value = dweller.DwellerBirthday;
+            cmd.Parameters.Add("dwellerIdCard", SqlDbType.VarChar).Value = dweller.DwellerIdCard;
+            cmd.Parameters.Add("status", SqlDbType.Int).Value = dweller.DwellerStatus;
+            cmd.Parameters.Add("title", SqlDbType.NVarChar).Value = dweller.DwellerStatusTitle;
+            return cls.CapNhatDL(cmd);
+        }
+
+        public int UpdateOldDweller(Object.ObjDweller dweller)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "UPDATE Dweller SET DwellerName = @name, DwellerGender = @gender, DwellerBirthday = @birthday, " +
+                "DwellerIdCard = @dwellerIdCard, DwellerStatus = @status, DwellerStatusTitle = @title, TenantIdCard = @tenantIdCard " +
+                "WHERE DwellerIdCard = @dwellerIdCard;";
             cmd.Parameters.Add("name", SqlDbType.NVarChar).Value = dweller.DwellerName;
             cmd.Parameters.Add("gender", SqlDbType.NVarChar).Value = dweller.DwellerGender;
             cmd.Parameters.Add("birthday", SqlDbType.Date).Value = dweller.DwellerBirthday;

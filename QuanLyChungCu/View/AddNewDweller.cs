@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace QuanLyChungCu.View
         public static string text = "";
         Controller.DwellerCtrl dwellerCtrl = new Controller.DwellerCtrl();
         Object.ObjDweller dweller = new Object.ObjDweller();
+
         public AddNewDweller()
         {
             InitializeComponent();
@@ -33,13 +35,13 @@ namespace QuanLyChungCu.View
 
         private void GanDuLieu(Object.ObjDweller dweller)
         {
-            dweller.DwellerName = txtDwellerName.Text.Trim();
-            dweller.DwellerGender = cbbDwellerGender.Text.Trim();
-            dweller.DwellerBirthday = txtDwellerBirthday.Text.Trim();
-            dweller.DwellerIdCard = txtDwellerIdCard.Text.Trim();
+            dweller.DwellerName = txtDwellerName.Text;
+            dweller.DwellerGender = cbbDwellerGender.Text;
+            dweller.DwellerBirthday = txtDwellerBirthday.Text;
+            dweller.DwellerIdCard = txtDwellerIdCard.Text;
             dweller.DwellerStatus = "1";
             dweller.DwellerStatusTitle = "Đang ở";
-            dweller.TenantIdCard = txtTenantIdCard.Text.Trim();
+            dweller.TenantIdCard = txtTenantIdCard.Text;
         }
 
         private void ThongBao(string text)
@@ -71,7 +73,9 @@ namespace QuanLyChungCu.View
             if (checkNullItem())
             {
                 GanDuLieu(dweller);
+                if (dwellerCtrl.KTNguoiThue(dweller.DwellerIdCard))
                 {
+
                     switch (dwellerCtrl.Them(dweller))
                     {
                         case 0:
@@ -86,10 +90,29 @@ namespace QuanLyChungCu.View
                             break;
                     }
                 }
+                else
+                {
+                    if (!dwellerCtrl.KTTrangThaiNguoiThue(dweller.DwellerIdCard))
+                    {
+                        dweller.DwellerStatus = "1";
+                        dweller.DwellerStatusTitle = "Đang ở";
+                        switch (dwellerCtrl.UpdateOldDweller(dweller))
+                        {
+                            case 1:
+                                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                LamMoi();
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        ThongBao("Nguời thuê hiện đang ở tại một phòng khác");
+                    }
+                }
             }
             else
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ThongBao("Vui lòng điền đầy đủ thông tin");
             }
         }
 
@@ -140,6 +163,27 @@ namespace QuanLyChungCu.View
             {
                 e.Handled = true;
             }
+        }
+
+        //On Progress: Auto Fill Data
+        private void txtDwellerIdCard_Leave(object sender, EventArgs e)
+        {
+            //SqlConnection conn = ConnectDatabase.connect;
+            //SqlCommand sqlcmd;
+            //sqlcmd = new SqlCommand();
+            //if (conn.State == ConnectionState.Closed)
+            //    conn.Open();
+            //sqlcmd.CommandText = "SELECT DwellerName, DwellerGender, DwellerBirthday FROM Dweller WHERE DwellerIdCard = @cmnd";
+            //sqlcmd.Parameters.Add("cmnd", SqlDbType.VarChar).Value = txtDwellerIdCard.Text;
+            //sqlcmd.Connection = conn;
+            //SqlDataReader dataReader = sqlcmd.ExecuteReader();
+            //while (dataReader.Read())
+            //{
+            //    txtDwellerName.Text = dataReader.GetString(0).ToString();
+            //    cbbDwellerGender.Text = dataReader.GetString(1).ToString();
+            //    txtDwellerBirthday.Text = dataReader.GetDateTime(2).ToString("MM/dd/yyyy");
+            //}
+            //conn.Close();
         }
     }
 }

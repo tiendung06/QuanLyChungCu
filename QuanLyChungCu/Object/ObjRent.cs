@@ -24,6 +24,14 @@ namespace QuanLyChungCu.Object
             set { _RentStatus = value; }
         }
 
+        private string _RentStatusTitle;
+
+        public string RentStatusTitle
+        {
+            get { return _RentStatusTitle; }
+            set { _RentStatusTitle = value; }
+        }
+
         private string _Payday;
 
         public string Payday

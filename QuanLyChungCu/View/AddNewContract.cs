@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,7 @@ namespace QuanLyChungCu.View
         Controller.ContractCtrl contractCtrl = new Controller.ContractCtrl();
         Controller.TenantCtrl tenantCtrl = new Controller.TenantCtrl();
         Model.ContractManage contractMng = new Model.ContractManage();
+        Model.DwellerManage dwellerManage = new Model.DwellerManage();
         Object.ObjContract contract = new Object.ObjContract();
         Object.ObjDweller dweller = new Object.ObjDweller();
         Controller.DwellerCtrl dwellerCtrl = new Controller.DwellerCtrl();
@@ -31,7 +33,6 @@ namespace QuanLyChungCu.View
         private void AddNewContract_Load(object sender, EventArgs e)
         {
             txtTenantBirthday.Enabled = false;
-
             txtDateStart.Enabled = false;
             txtDateEnd.Enabled = false;
             btnDateEnd.Enabled = false;
@@ -82,7 +83,24 @@ namespace QuanLyChungCu.View
                     {
                         tenantCtrl.Update(tenant);
                     }
-                    dwellerCtrl.Them(dweller);
+
+                    if (dwellerCtrl.KTNguoiThue(dweller.DwellerIdCard))
+                    {
+                        dwellerManage.Save(dweller);
+                    }
+                    else
+                    {
+                        if (!dwellerCtrl.KTTrangThaiNguoiThue(dweller.DwellerIdCard))
+                        {
+                            dweller.DwellerStatus = "1";
+                            dweller.DwellerStatusTitle = "Đang ở";
+                            dwellerManage.Update(dweller);
+                        }
+                        else
+                        {
+                            ThongBao("Nguời thuê hiện đang ở tại một phòng khác");
+                        }
+                    }
                     contractMng.Save(contract);
                     MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     contractCtrl.CapNhatPhong(room);
@@ -144,7 +162,7 @@ namespace QuanLyChungCu.View
         {
             room.RoomId = txtRoomId.Text.Trim();
             room.RoomStatus = "1";
-            room.RoomStatusTitle = "Đã được thuê";
+            room.RoomStatusTitle = "Phòng có người thuê";
         }
 
         //Hàm xử lý thông báo lỗi.
@@ -259,6 +277,54 @@ namespace QuanLyChungCu.View
         private void txtCreditNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidNumber(e);
+        }
+
+        private void txtTenantIdCard_Leave(object sender, EventArgs e)
+        {
+            //In Progres: Fill Date
+            //FillDwellerData();
+            //FillTenantData();
+        }
+
+        public void FillDwellerData()
+        {
+            SqlConnection conn = ConnectDatabase.connect;
+            SqlCommand sqlcmd;
+            sqlcmd = new SqlCommand();
+            conn.Close();
+            conn.Open();
+            sqlcmd.CommandText = "SELECT DwellerName, DwellerGender, DwellerBirthday FROM Dweller WHERE DwellerIdCard = @cmnd";
+            sqlcmd.Parameters.Add("cmnd", SqlDbType.VarChar).Value = txtTenantIdCard.Text;
+            sqlcmd.Connection = conn;
+            SqlDataReader dataReader = sqlcmd.ExecuteReader();
+            while (dataReader.Read())
+            {
+                txtTenantName.Text = dataReader.GetString(0).ToString();
+                cbbTenantGender.Text = dataReader.GetString(1).ToString();
+                txtTenantBirthday.Text = dataReader.GetDateTime(2).ToString("MM/dd/yyyy");
+            }
+            conn.Close();
+        }
+
+        public void FillTenantData()
+        {
+            SqlConnection conn = ConnectDatabase.connect;
+            SqlCommand sqlcmd;
+            sqlcmd = new SqlCommand();
+            conn.Close();
+            conn.Open();
+            sqlcmd.CommandText = "SELECT TenantPhoneNumber, TenantEmail, CreditNumber, Bank From Tenant WHERE TenantIdCard = @cmnd";
+            sqlcmd.Parameters.Add("cmnd", SqlDbType.VarChar).Value = txtTenantIdCard.Text;
+            sqlcmd.Connection = conn;
+            SqlDataReader dataReader = sqlcmd.ExecuteReader();
+            while (dataReader.Read())
+            {
+                txtTenantPhoneNumber.Text = dataReader.GetString(0).ToString();
+                txtTenantEmail.Text = dataReader.GetString(1).ToString();
+                txtCreditNumber.Text = dataReader.GetString(2).ToString();
+                txtBank.Text = dataReader.GetString(3).ToString();
+            }
+            conn.Close();
         }
     }
 }

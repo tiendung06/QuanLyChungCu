@@ -27,8 +27,9 @@ namespace QuanLyChungCu.View
         {
             if (Login.resultLogin != 1)
             {
-                btnXoa.Enabled = false;
-                btnThemNguoiThue.Enabled = false;
+                btnXoa.Visible = false;
+                btnThemNguoiThue.Visible = false;
+                btnCapNhat.Visible = false;
             }
             DwellerManage.HienThi(dgvDSChiTietNguoiThue);
             HienThiThongTin();
@@ -67,6 +68,7 @@ namespace QuanLyChungCu.View
             txtDwellerIdCard.Clear();
             txtRoomId.Clear();
             txtTimKiem.Clear();
+            dwellerCtrl.HienThi(dgvDSChiTietNguoiThue);
         }
 
         private void mntNgaySinh_DateSelected(object sender, DateRangeEventArgs e)
@@ -133,15 +135,21 @@ namespace QuanLyChungCu.View
                 SetDataDweller(dweller);
                 dweller.DwellerStatus = "0";
                 dweller.DwellerStatusTitle = "Không còn ở";
-                string id_customer = dgvDSChiTietNguoiThue.CurrentRow.Cells[0].Value.ToString();
                 DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dlg == DialogResult.Yes)
                 {
-                    if (dwellerCtrl.Xoa(dweller) != -9999)
+                    if (dwellerCtrl.KTSoHuuHopDong(txtDwellerIdCard.Text))
                     {
-                        MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        dwellerCtrl.HienThi(dgvDSChiTietNguoiThue, id_customer);
-                        HienThiThongTin();
+                        if (dwellerCtrl.Xoa(dweller) != -9999)
+                        {
+                            MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            dwellerCtrl.HienThi(dgvDSChiTietNguoiThue);
+                            HienThiThongTin();
+                        }
+                        else
+                        {
+                            ThongBao("Không thể xóa thông tin người thuê này");
+                        }
                     }
                     else
                     {
@@ -150,6 +158,7 @@ namespace QuanLyChungCu.View
                 }
             }
         }
+
         private bool checkNullTextBox()
         {
             if (txtDwellerId.Text.Trim() == "")

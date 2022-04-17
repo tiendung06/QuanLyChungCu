@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_QLTaiKhoan = new System.Windows.Forms.Label();
             this.grp_TimKiem = new Guna.UI.WinForms.GunaGradient2Panel();
@@ -62,7 +62,7 @@
             this.Month = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Payday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SettlementDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RentStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RentStatusTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.grp_TimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.optionCombobox)).BeginInit();
@@ -305,7 +305,7 @@
             this.txtSettlementDay.Location = new System.Drawing.Point(497, 62);
             this.txtSettlementDay.Margin = new System.Windows.Forms.Padding(2);
             this.txtSettlementDay.Name = "txtSettlementDay";
-            this.txtSettlementDay.Size = new System.Drawing.Size(166, 31);
+            this.txtSettlementDay.Size = new System.Drawing.Size(93, 31);
             this.txtSettlementDay.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
             this.txtSettlementDay.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtSettlementDay.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -328,7 +328,7 @@
             this.txtPayday.Location = new System.Drawing.Point(497, 22);
             this.txtPayday.Margin = new System.Windows.Forms.Padding(2);
             this.txtPayday.Name = "txtPayday";
-            this.txtPayday.Size = new System.Drawing.Size(166, 31);
+            this.txtPayday.Size = new System.Drawing.Size(93, 31);
             this.txtPayday.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
             this.txtPayday.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtPayday.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -753,14 +753,14 @@
             // 
             this.dgvDSChiTietThuTien.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvDSChiTietThuTien.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDSChiTietThuTien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDSChiTietThuTien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDSChiTietThuTien.ColumnHeadersHeight = 36;
             this.dgvDSChiTietThuTien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RentId,
@@ -769,16 +769,16 @@
             this.Month,
             this.Payday,
             this.SettlementDay,
-            this.RentStatus});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDSChiTietThuTien.DefaultCellStyle = dataGridViewCellStyle2;
+            this.RentStatusTitle});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDSChiTietThuTien.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDSChiTietThuTien.Location = new System.Drawing.Point(27, 325);
             this.dgvDSChiTietThuTien.Name = "dgvDSChiTietThuTien";
             this.dgvDSChiTietThuTien.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -838,13 +838,13 @@
             this.SettlementDay.ReadOnly = true;
             this.SettlementDay.Width = 150;
             // 
-            // RentStatus
+            // RentStatusTitle
             // 
-            this.RentStatus.DataPropertyName = "RentStatus";
-            this.RentStatus.HeaderText = "Trạng thái hóa đơn";
-            this.RentStatus.Name = "RentStatus";
-            this.RentStatus.ReadOnly = true;
-            this.RentStatus.Width = 160;
+            this.RentStatusTitle.DataPropertyName = "RentStatusTitle";
+            this.RentStatusTitle.HeaderText = "Trạng thái hóa đơn";
+            this.RentStatusTitle.Name = "RentStatusTitle";
+            this.RentStatusTitle.ReadOnly = true;
+            this.RentStatusTitle.Width = 160;
             // 
             // QuanLyThuTien
             // 
@@ -904,6 +904,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Month;
         private System.Windows.Forms.DataGridViewTextBoxColumn Payday;
         private System.Windows.Forms.DataGridViewTextBoxColumn SettlementDay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RentStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RentStatusTitle;
     }
 }
