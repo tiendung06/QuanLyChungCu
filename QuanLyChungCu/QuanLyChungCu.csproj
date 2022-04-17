@@ -88,7 +88,6 @@
     <Compile Include="Controller\RentCtrl.cs" />
     <Compile Include="Controller\ReportCtrl.cs" />
     <Compile Include="Controller\RoomCtrl.cs" />
-    <Compile Include="Controller\StaisticalCtr.cs" />
     <Compile Include="Controller\TenantCtrl.cs" />
     <Compile Include="HelperData\DataConfig.cs" />
     <Compile Include="Lib\ReportExtensionMethod.cs" />
@@ -111,7 +110,6 @@
     <Compile Include="Model\ContractManage.cs" />
     <Compile Include="Model\DwellerManage.cs" />
     <Compile Include="Model\RoomManage.cs" />
-    <Compile Include="Model\StatisticalMng.cs" />
     <Compile Include="Object\ObjContract.cs" />
     <Compile Include="Object\ObjCustomerDetail.cs" />
     <Compile Include="Object\ObjDweller.cs" />
@@ -162,12 +160,6 @@
     <Compile Include="View\QuanLyNguoiThue.Designer.cs">
       <DependentUpon>QuanLyNguoiThue.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\QLThongKe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\QLThongKe.Designer.cs">
-      <DependentUpon>QLThongKe.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\QuanLyPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,12 +171,6 @@
     </Compile>
     <Compile Include="View\QuanLyThuTien.Designer.cs">
       <DependentUpon>QuanLyThuTien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\SendEmail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\SendEmail.Designer.cs">
-      <DependentUpon>SendEmail.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -217,9 +203,6 @@
     <EmbeddedResource Include="View\Default.resx">
       <DependentUpon>Default.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\QLThongKe.resx">
-      <DependentUpon>QLThongKe.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\QuanLyHopDong.resx">
       <DependentUpon>QuanLyHopDong.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,9 +214,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\QuanLyThuTien.resx">
       <DependentUpon>QuanLyThuTien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\SendEmail.resx">
-      <DependentUpon>SendEmail.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
